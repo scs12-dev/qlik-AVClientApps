@@ -1,0 +1,573 @@
+[
+    {
+        "qProperty": {
+            "qInfo": {
+                "qId": "dBxbPR",
+                "qType": "sheet"
+            },
+            "qMetaDef": {
+                "title": "Collection",
+                "description": ""
+            },
+            "rank": 1.5,
+            "thumbnail": {
+                "qStaticContentUrlDef": {
+                    "qUrl": "/appcontent/12a37d50-ec71-4a8c-b7b7-1ba8375d7154/01_Coll.jpg"
+                }
+            },
+            "columns": 36,
+            "rows": 18,
+            "cells": [
+                {
+                    "name": "FFHmCR",
+                    "type": "barchart",
+                    "col": 0,
+                    "row": 1,
+                    "colspan": 30,
+                    "rowspan": 7,
+                    "bounds": {
+                        "y": 5.555555555555555,
+                        "x": 0,
+                        "width": 83.33333333333334,
+                        "height": 38.88888888888889
+                    }
+                },
+                {
+                    "name": "NHNcaHB",
+                    "type": "table",
+                    "col": 30,
+                    "row": 0,
+                    "colspan": 6,
+                    "rowspan": 8,
+                    "bounds": {
+                        "y": 0,
+                        "x": 83.33333333333334,
+                        "width": 16.666666666666664,
+                        "height": 44.44444444444444
+                    }
+                },
+                {
+                    "name": "destauY",
+                    "type": "senseFieldUI",
+                    "col": 1,
+                    "row": 9,
+                    "colspan": 11,
+                    "rowspan": 9,
+                    "bounds": {
+                        "y": 50,
+                        "x": 2.7777777777777777,
+                        "width": 30.555555555555557,
+                        "height": 50
+                    }
+                },
+                {
+                    "name": "RBkJjuU",
+                    "type": "table",
+                    "col": 0,
+                    "row": 8,
+                    "colspan": 1,
+                    "rowspan": 9,
+                    "bounds": {
+                        "y": 44.44444444444444,
+                        "x": 0,
+                        "width": 2.7777777777777777,
+                        "height": 50
+                    }
+                },
+                {
+                    "name": "Gwcq",
+                    "type": "text-image",
+                    "col": 4,
+                    "row": 0,
+                    "colspan": 4,
+                    "rowspan": 1,
+                    "bounds": {
+                        "y": 0,
+                        "x": 11.11111111111111,
+                        "width": 11.11111111111111,
+                        "height": 5.555555555555555
+                    }
+                },
+                {
+                    "name": "fyLYBZp",
+                    "type": "Switch",
+                    "col": 0,
+                    "row": 0,
+                    "colspan": 4,
+                    "rowspan": 1,
+                    "bounds": {
+                        "y": 0,
+                        "x": 0,
+                        "width": 11.11111111111111,
+                        "height": 5.555555555555555
+                    }
+                },
+                {
+                    "name": "hJaqu",
+                    "type": "container",
+                    "col": 12,
+                    "row": 8,
+                    "colspan": 24,
+                    "rowspan": 10,
+                    "bounds": {
+                        "y": 44.44444444444444,
+                        "x": 33.33333333333333,
+                        "width": 66.66666666666666,
+                        "height": 55.55555555555556
+                    }
+                }
+            ],
+            "gridResolution": "large",
+            "gridMode": "edit"
+        },
+        "qChildren": [
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "RBkJjuU",
+                        "qType": "table"
+                    },
+                    "qExtendsId": "ea67bd15-a20a-4497-b7b1-481a1eca83c7",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "Gwcq",
+                        "qType": "text-image"
+                    },
+                    "qMetaDef": {},
+                    "qHyperCubeDef": {
+                        "qDimensions": [],
+                        "qMeasures": [],
+                        "qInterColumnSortOrder": [],
+                        "qInitialDataFetch": [],
+                        "qReductionMode": "N",
+                        "qMode": "S",
+                        "qPseudoDimPos": -1,
+                        "qNoOfLeftDims": -1,
+                        "qMaxStackedCells": 5000,
+                        "qCalcCond": {},
+                        "qTitle": {},
+                        "qCalcCondition": {
+                            "qCond": {},
+                            "qMsg": {}
+                        },
+                        "qColumnOrder": [],
+                        "qExpansionState": [],
+                        "qDynamicScript": [],
+                        "qLayoutExclude": {
+                            "qHyperCubeDef": {
+                                "qDimensions": [],
+                                "qMeasures": [],
+                                "qInterColumnSortOrder": [],
+                                "qInitialDataFetch": [],
+                                "qReductionMode": "N",
+                                "qMode": "S",
+                                "qPseudoDimPos": -1,
+                                "qNoOfLeftDims": -1,
+                                "qMaxStackedCells": 5000,
+                                "qCalcCond": {},
+                                "qTitle": {},
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "qColumnOrder": [],
+                                "qExpansionState": [],
+                                "qDynamicScript": []
+                            }
+                        }
+                    },
+                    "showTitles": false,
+                    "title": "",
+                    "subtitle": "",
+                    "footnote": "",
+                    "disableNavMenu": false,
+                    "showDetails": false,
+                    "responsive": "all",
+                    "markdown": "#[Note: This is Collection Activity and Overview merged. Select Summary or Detail to get the basis of each report and then add dimensions as desired. Site and Account always display.]({\"index\":-1,\"color\":\"#540819\"})",
+                    "images": [],
+                    "background": {
+                        "isUsed": false,
+                        "size": "auto",
+                        "position": "topLeft",
+                        "url": {}
+                    },
+                    "visualization": "text-image"
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "FFHmCR",
+                        "qType": "barchart"
+                    },
+                    "qExtendsId": "f44f5d9a-e5be-4726-bee0-31dbea8f57e1",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "destauY",
+                        "qType": "senseFieldUI"
+                    },
+                    "qExtendsId": "0cf4626c-ddf1-4dd6-a76c-f3ea454cad48",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "fyLYBZp",
+                        "qType": "Switch"
+                    },
+                    "qExtendsId": "bec2e8ec-ac8b-446b-b2e8-b5f7ecf6f778",
+                    "qMetaDef": {},
+                    "selection_state": "right"
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "NHNcaHB",
+                        "qType": "table"
+                    },
+                    "qMetaDef": {},
+                    "qHyperCubeDef": {
+                        "qDimensions": [
+                            {
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [
+                                        "=[Collection Status]\r\n//=if(IC_Status= 'Processed' OR IC_Status='Received' OR IC_Status='Chased' OR IC_Status='Not Received' \n//OR IC_Status='Escalated' OR IC_Status='Under Review', IC_Status)"
+                                    ],
+                                    "qFieldLabels": [
+                                        "Legend"
+                                    ],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": false,
+                                    "cId": "gRsjSsJ",
+                                    "othersLabel": "Others",
+                                    "representation": {
+                                        "type": "text"
+                                    }
+                                },
+                                "qNullSuppression": true,
+                                "qOtherTotalSpec": {
+                                    "qOtherMode": "OTHER_OFF",
+                                    "qOtherCounted": {
+                                        "qv": "10"
+                                    },
+                                    "qOtherLimit": {
+                                        "qv": "0"
+                                    },
+                                    "qOtherLimitMode": "OTHER_GE_LIMIT",
+                                    "qForceBadValueKeeping": true,
+                                    "qApplyEvenWhenPossiblyWrongResult": true,
+                                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                    "qTotalMode": "TOTAL_OFF",
+                                    "qReferencedExpression": {}
+                                },
+                                "qOtherLabel": {
+                                    "qv": "Others"
+                                },
+                                "qTotalLabel": {},
+                                "qCalcCond": {},
+                                "qAttributeExpressions": [
+                                    {
+                                        "qExpression": "$(v_CP_Status_Colors)",
+                                        "qAttribute": true,
+                                        "qNumFormat": {
+                                            "qType": "U",
+                                            "qnDec": 10,
+                                            "qUseThou": 0
+                                        },
+                                        "id": "cellBackgroundColor"
+                                    },
+                                    {
+                                        "qExpression": "='#FFFFFF'",
+                                        "qAttribute": true,
+                                        "qNumFormat": {
+                                            "qType": "U",
+                                            "qnDec": 10,
+                                            "qUseThou": 0
+                                        },
+                                        "id": "cellForegroundColor"
+                                    }
+                                ],
+                                "qAttributeDimensions": [],
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "othersLabel": "Others"
+                            }
+                        ],
+                        "qMeasures": [
+                            {
+                                "qLibraryId": "gRSAQG",
+                                "qDef": {
+                                    "qTags": [],
+                                    "qGrouping": "N",
+                                    "qNumFormat": {
+                                        "qType": "F",
+                                        "qnDec": 2,
+                                        "qUseThou": 0,
+                                        "qFmt": "0%",
+                                        "qDec": ".",
+                                        "qThou": ","
+                                    },
+                                    "qAggrFunc": "Expr",
+                                    "qAccumulate": 0,
+                                    "qActiveExpression": 0,
+                                    "qExpressions": [],
+                                    "autoSort": true,
+                                    "cId": "LDwmsj",
+                                    "numFormatFromTemplate": true,
+                                    "textAlign": {
+                                        "auto": true,
+                                        "align": "left"
+                                    }
+                                },
+                                "qSortBy": {
+                                    "qSortByNumeric": -1,
+                                    "qSortByLoadOrder": 1,
+                                    "qExpression": {}
+                                },
+                                "qAttributeExpressions": [
+                                    {
+                                        "qExpression": "$(v_CP_Status_Colors)",
+                                        "qAttribute": true,
+                                        "id": "cellForegroundColor"
+                                    }
+                                ],
+                                "qAttributeDimensions": [],
+                                "qCalcCond": {},
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "qTrendLines": [],
+                                "qMiniChartDef": {
+                                    "qSortBy": {
+                                        "qExpression": {}
+                                    },
+                                    "qOtherTotalSpec": {
+                                        "qOtherMode": "OTHER_OFF",
+                                        "qOtherCounted": {},
+                                        "qOtherLimit": {},
+                                        "qOtherLimitMode": "OTHER_GT_LIMIT",
+                                        "qForceBadValueKeeping": true,
+                                        "qApplyEvenWhenPossiblyWrongResult": true,
+                                        "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                        "qTotalMode": "TOTAL_OFF",
+                                        "qReferencedExpression": {}
+                                    },
+                                    "qMaxNumberPoints": -1,
+                                    "qAttributeExpressions": []
+                                }
+                            }
+                        ],
+                        "qInterColumnSortOrder": [
+                            1,
+                            0
+                        ],
+                        "qSuppressMissing": true,
+                        "qInitialDataFetch": [
+                            {
+                                "qLeft": 0,
+                                "qTop": 0,
+                                "qWidth": 0,
+                                "qHeight": 0
+                            }
+                        ],
+                        "qReductionMode": "N",
+                        "qMode": "S",
+                        "qPseudoDimPos": -1,
+                        "qNoOfLeftDims": -1,
+                        "qMaxStackedCells": 5000,
+                        "qCalcCond": {},
+                        "qTitle": {},
+                        "qCalcCondition": {
+                            "qCond": {},
+                            "qMsg": {}
+                        },
+                        "qColumnOrder": [
+                            0,
+                            1
+                        ],
+                        "qExpansionState": [],
+                        "qDynamicScript": [],
+                        "customErrorMessage": {
+                            "calcCond": ""
+                        },
+                        "columnOrder": [
+                            0,
+                            1
+                        ],
+                        "columnWidths": [
+                            73,
+                            -1
+                        ],
+                        "qLayoutExclude": {
+                            "qHyperCubeDef": {
+                                "qDimensions": [],
+                                "qMeasures": [],
+                                "qInterColumnSortOrder": [],
+                                "qInitialDataFetch": [],
+                                "qReductionMode": "N",
+                                "qMode": "S",
+                                "qPseudoDimPos": -1,
+                                "qNoOfLeftDims": -1,
+                                "qMaxStackedCells": 5000,
+                                "qCalcCond": {},
+                                "qTitle": {},
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "qColumnOrder": [],
+                                "qExpansionState": [],
+                                "qDynamicScript": []
+                            }
+                        }
+                    },
+                    "showTitles": false,
+                    "title": "",
+                    "subtitle": "",
+                    "footnote": "",
+                    "showDetails": false,
+                    "visualization": "table",
+                    "qLayoutExclude": {},
+                    "totals": {
+                        "show": false,
+                        "position": "noTotals",
+                        "label": "Totals"
+                    },
+                    "masterVersion": 0.96
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "hJaqu",
+                        "qType": "container"
+                    },
+                    "qMetaDef": {},
+                    "children": [
+                        {
+                            "refId": "117d6f96-4ea7-4f98-b044-7e58c139d678",
+                            "label": {
+                                "qStringExpression": {
+                                    "qExpr": "='Detail'"
+                                }
+                            },
+                            "isMaster": true,
+                            "cId": "FLacN"
+                        },
+                        {
+                            "refId": "06022536-7d09-4971-87bd-a49fd8a0dc34",
+                            "label": {
+                                "qStringExpression": {
+                                    "qExpr": "'Summary'"
+                                }
+                            },
+                            "isMaster": true,
+                            "cId": "TcJLq"
+                        },
+                        {
+                            "refId": "86b23e34-149d-4526-89f6-553d7c745668",
+                            "label": {
+                                "qStringExpression": {
+                                    "qExpr": "'Client Contacts'"
+                                }
+                            },
+                            "isMaster": true,
+                            "cId": "jAWz"
+                        }
+                    ],
+                    "showTitles": false,
+                    "title": "",
+                    "subtitle": "",
+                    "footnote": "",
+                    "disableNavMenu": false,
+                    "showDetails": true,
+                    "showDetailsExpression": false,
+                    "borders": "auto",
+                    "showTabs": true,
+                    "useDropdown": true,
+                    "useScrollButton": true,
+                    "showIcons": false,
+                    "activeTab": "",
+                    "defaultTab": "",
+                    "visualization": "container",
+                    "qChildListDef": {
+                        "qData": {
+                            "visualization": "/visualization",
+                            "containerChildId": "/containerChildId",
+                            "qExtendsId": "/qExtendsId",
+                            "title": "/title",
+                            "showCondition": "/showCondition"
+                        }
+                    },
+                    "supportRefresh": false,
+                    "hasExternalChildren": false
+                },
+                "qChildren": [
+                    {
+                        "qProperty": {
+                            "qInfo": {
+                                "qId": "8fb50f16-41ad-4162-8dbb-a8fcae762fe9",
+                                "qType": "table"
+                            },
+                            "qExtendsId": "117d6f96-4ea7-4f98-b044-7e58c139d678",
+                            "qMetaDef": {},
+                            "visualization": "table"
+                        },
+                        "qChildren": []
+                    },
+                    {
+                        "qProperty": {
+                            "qInfo": {
+                                "qId": "986898e3-2f96-42a6-a309-d121b3ebd2e6",
+                                "qType": "table"
+                            },
+                            "qExtendsId": "06022536-7d09-4971-87bd-a49fd8a0dc34",
+                            "qMetaDef": {},
+                            "visualization": "table"
+                        },
+                        "qChildren": []
+                    },
+                    {
+                        "qProperty": {
+                            "qInfo": {
+                                "qId": "0969e53b-e6c7-4bf4-80dd-e3c5f2b338e5",
+                                "qType": "table"
+                            },
+                            "qExtendsId": "86b23e34-149d-4526-89f6-553d7c745668",
+                            "qMetaDef": {},
+                            "visualization": "table"
+                        },
+                        "qChildren": []
+                    }
+                ]
+            }
+        ]
+    }
+]

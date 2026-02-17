@@ -1,0 +1,605 @@
+///$tab Version History
+/*
+ * Invoice Collection Report
+ *
+ * Original Author: Hannah Miller
+ * Currently Maintained by: Aaron Couron
+ *
+ * Release History
+ * 04-30-2020 - HMM cleaning up labels on front end and removing user qvd from script
+ * v2.0.22-062.1	2022-03-04	ACC	List of front-end updates from Erin Haynes
+ *		add Service Type and mark as Payment or Collection
+ 		Note: originally removed "Not Expected" Collection Statuses, but because this removes some keys needed for dimensions, some of the issues were being hidden 
+ 			with selections. Had remove the exclusion and put back the limiting sets in denominators for non-issue sheets.
+ *	no version change	2022-03-30 Note that Hari changed view CBMS.dbo.vw_IC_Issue to no longer exclude'Resolved', 'Excluded', 'Archived'. No change in Qlik required.
+ * v2.0.22-125.2 ACC	Fix problem with Collection Participation by Status %. Fix issue with future dates showing up in data. "Not Expected" statuses
+ * v2.0.22-137.1 ACC	Invoice_Collection_Received_Status_Date added to IC_Month.qvd
+ * v2.0.22-138.1 ACC	Add Under Review to calc for Open Chase Periods
+ * v2.0.22-258.1 ACC	Resolve some issues with Enhancements
+ * v2.0.22-293.2 ACC	Added Issue Sub Type, Issue Category to filters and Issue Tracker table, fixed issue with 12 month selector, 
+ 	consolidations required on issue tracker, add service month to received page table, remove not-managed accounts, various other cosmetic changes
+ * v2.0.22-299.1 ACC	Isolate the most recent [Invoice_Collection_Service_Start_Dt] to get the expected invoice date. Remove Received and Processed 
+ 	records form Colection page Detail table. Reduce decimal precision on donut charts. Create key to more accurately count invoices, because just counting rows in 
+    IC Record table is inflating the number (issue id is in this view for some reason). Remove totals from Top 5 Sites Issues chart because totals are not consistent 
+    with detail (issues shared between sites)
+ * v2.0.22-320.1 ACC	https://summit.jira.com/browse/BI-1319 If Issue Sub Type is blank, populate Issue Category with Escalated.
+ * v2.0.23-005.1 ACC	BI-1326 Adjust Current_Full_Month_Escalation_Flag to be from today rather than from the calendar (derived from expected invoices) / 
+ 	BI-1328 Add "distinct" to the issue tracker Comment column so that the comment appears in all rows of that issue for that esccalation date.
+ * v2.0.23-099.1 ACC	BI-1340 also exclude Collection Status 'Not Expected' from the Detail table on the collection page
+ * v2.0.23-158.1 ACC	BI-1624 Adjust the Collections --> Accounts by Invoice Source calc so it ignores records with null source account.
+ * v2.0.23-158.4 ACC	Add a debug data model qvd
+ * v2.0.23-163.1 ACC	BI-1624 Another iteration of the settings for all 4 pie charts.
+ * v2.0.23-207.1 ACC	BI-1676 Adjust Collection Activity Detail report to concatenate issue ids so that rows do not repeat for that reason.
+ * v2.0.23-282.1 ACC	BI-1762 Add a blank line to the issue load to prevent "Billing Periods Affected" KPI set analysis from showing all records when the Issue Status is 100% null (new config) 
+	BI-1768 for Donut chart Accounts by Invoice Source, change the counting field from  %Invoice_Collection_Account_Config_Id to %Account_Id
+ * v2.0.23-333-1 ACC	BI-1815 Replacing view (vw_IC_Account_Config) with procedure QVD_IC_Account_Config. Adds 2 fields Primary_Expected_recieve_Date and Attribute_Tracking_Invoice_Collection_Is_Chased
+	No longer require IC_Setup_Account (use flag in new procedure to limit the Account COnfig records.
+ * v2.0.24-065.1 ACC	BI-1964 Remove the count column from the table in collection sheet.
+ * v2.0.24-113.1 ACC	BI-2001 Limit the Expected Invoice Schedule to the next 30 days.
+ * v2.0.24-198.1 ACC	D20-6419 Add (Change) the Vendor name to a different source.(now located in IC_Account_Config with logic done in SQL Procedure) // Commented out the old convoluted vendor code
+ * v2.0.24-330.1 ACC	Several minor enhancements: BI-2347: Add Person_Chased to the Issue Tracker // BI-2351: Add # of Accounts KPI // BI-2350 Move Payment/Collection filter to config bar.
+ 	Minor optimizations
+ * v2.0.24-347.1 ACC	BI-2352Changes to lower section of collection tab.
+ * v2.0.25-113.2 ACC	Special version that merges the 347 changes along with BI-2503 (not expected removal)
+ */
+ 
+LET vVersion = '2.0.25-113.2';
+LET vQAMID = 'QAM-64';		
+///$tab Main
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET MoneyThousandSep=',';
+SET MoneyDecimalSep='.';
+SET MoneyFormat='$#,##0.00;($#,##0.00)';
+SET TimeFormat='h:mm:ss TT';
+SET DateFormat='YYYY-MM-DD';
+SET TimestampFormat='M/D/YYYY h:mm:ss[.fff] TT';
+SET FirstWeekDay=6;
+SET BrokenWeeks=1;
+SET ReferenceDay=0;
+SET FirstMonthOfYear=1;
+SET CollationLocale='en-US';
+SET MonthNames='Jan;Feb;Mar;Apr;May;Jun;Jul;Aug;Sep;Oct;Nov;Dec';
+SET LongMonthNames='January;February;March;April;May;June;July;August;September;October;November;December';
+SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
+SET LongDayNames='Monday;Tuesday;Wednesday;Thursday;Friday;Saturday;Sunday';
+
+set hideprefix = '%';
+
+v_FolderName='14829';
+set v_ClientId = '$(v_FolderName)';
+//10074 Abbott Laboratories
+//10003 PepsiCo
+//15085 Deutsche Bank
+//11278 BS Client 
+//13094 Wyndham   
+//11634 Metal Improvement 
+//12344 Royal Philips 
+//13079 Sanofi  
+//14806 J&J
+//11366 Lonza America
+//13249 Age UK
+
+set v_RA_QVD_Client_Connection = "lib://RAExtractions/$(v_FolderName)";
+set v_RA_QVD_Global_Connection = "lib://RAExtractions/Global";
+
+set v_Client_External_Data_Connection = "lib://ExternalDataConnection/$(v_FolderName)";
+set v_Global_Common_External_Data_Connection = "lib://ExternalDataConnection/Common";
+
+//	optional (1,0) to create a flat qvd debug file in the client folder
+set v_debug	=	0;
+
+///////////////////////////
+//	Set Minimum Date
+//////////////////////////
+let v_min_global_date	=	(yearstart(addmonths(today(),-60))-2);
+trace v_min_global_date	=$(v_min_global_date);
+
+
+///$tab Security
+/***********************************************************************************************************************************************
+"User Security"
+***********************************************************************************************************************************************/
+section access;
+LOAD "ACCESS",
+    "USERID",
+    upper(SECURITYROLE) as %SECURITYROLE
+FROM [$(v_RA_QVD_Client_Connection)\User_Security_Info.qvd](qvd);
+
+section application;
+
+
+
+///$tab Invoice Collection Issue
+/******************************************************************************************************************************************
+Invoice Collection Data
+	This table will have one record for each month( based on the configuration cnt may be more) ( bi monthly 2 record per month) along with the IC Status ( Processed/Recieved/Chased/Issue)    
+******************************************************************************************************************************************/
+Invoice_Collection_Source_Map:
+MAPPING LOAD * 
+Inline [
+Invoice_Collection_Primary_Source, Invoice_Collection_Primary_Source_Label
+UBM, ADS
+];
+
+//	Mark the latest expected date, because this is the only one to show in the report.
+map_Latest_Exp:
+mapping load distinct Account_Id, num(max([Invoice_Collection_Service_Start_Dt])) as [Invoice_Collection_Service_Start_Dt_Max]
+FROM  [$(v_RA_QVD_Client_Connection)\IC_Account_Config.qvd](qvd)
+where Attribute_Tracking_Invoice_Collection_Is_Chased = 1
+group by Account_Id;
+
+//	We are now loading Account Config first since we can limit it by the Attribute_Tracking_Invoice_Collection_Is_Chased flag
+"IC Account Config":
+LOAD "Invoice_Collection_Account_Config_Id" AS %Invoice_Collection_Account_Config_Id
+    ,"Invoice_Collection_Alternative_Account_Number"
+    ,ApplyMap('Invoice_Collection_Source_Map', Invoice_Collection_Primary_Source
+    	,if(Invoice_Collection_Primary_Source='Vendor'
+        	,'Vendor - ' & if(Invoice_Collection_Source_Type='Online','Online','Email')
+            ,Invoice_Collection_Primary_Source)) as [Invoice Source]
+            //,Invoice_Collection_Primary_Source)) As Invoice_Collection_Primary_Source_Label
+    ,IF("Is_Chase_Activated"='0','No','Yes') AS  Is_Chase_Activated
+    ,"Account_Id" AS %Account_Id
+    //,if(Invoice_Collection_Source_Type='Online',Invoice_Collection_Source_Type,'Email') as [Source Type]
+    ,if(wildmatch(Invoice_Collection_Service_Type,'IC*'),'Collection','Payment') as [Payment/Collection]
+    ,"Primary_Expected_Invoice_Received_Day" as Expected_Invoice_Receive_Day
+    ,"Primary_Expected_Invoice_Received_Day_Lag" as Expected_Invoice_Receive_Lag_Month
+    ,"Primary_Invoice_Frequency" as Expected_Invoice_Frequency
+    ,num([Invoice_Collection_Service_Start_Dt]) as [Invoice_Collection_Service_Start_Dt]
+    ,if(applymap('map_Latest_Exp',Account_Id,0)=num([Invoice_Collection_Service_Start_Dt]),1,0) as Is_Latest_Exp
+    ,date(Primary_Expected_Invoice_Received_Date,'DD MMM YYYY') as Expected_Invoice_Receive_Date
+    ,num(date#(Primary_Expected_Invoice_Received_Date,'YYYY-MM-DD')) as Expected_Invoice_Received_Date_Num
+FROM  [$(v_RA_QVD_Client_Connection)\IC_Account_Config.qvd](qvd)
+where Attribute_Tracking_Invoice_Collection_Is_Chased = 1;
+
+"Security Account":
+LOAD
+    upper(Security_Role_Id) as %SECURITYROLE,
+    Client_Hier_Id as %Client_Hier_Id,
+    Site_Name as 'Site',
+    Sitegroup_Name as 'Division',
+    //Site_Address_Line1 as 'Address',
+    //City as 'City',
+    State_Name as 'State',
+    Country_Name as 'Country',
+    GeoMakePoint(Geo_Lat, Geo_Long) as Location,
+    Account_Id as %Account_Id,
+    Account_Type as 'Account Type',
+    //Text(If( Account_Type = 'Utility', Display_Account_Number)) as 'Utility Account Number',
+    //Text(If( Account_Type = 'Supplier', Display_Account_Number)) as 'Supplier Account Number',
+    if(Account_Type ='Utility' ,Text(If( Account_Type = 'Utility', Display_Account_Number)),Text(If( Account_Type = 'Supplier', Display_Account_Number))) as [Account Number],
+    Display_Account_Number
+	//If(Account_Type = 'Utility', Account_Vendor_Name) as 'Utility Name',
+    //If(Account_Type = 'Supplier', Account_Vendor_Name) as 'Supplier Name'
+    //,Account_Not_Managed
+FROM [$(v_RA_QVD_Client_Connection)\SiteGroup_Site_Account_Security_Role_Client_Hier.qvd](qvd)
+where Sitegroup_Type_Name = 'Division'
+and Account_Not_Managed=0
+and exists(%Account_Id,Account_Id);
+
+Tag Field [Site_Name] WITH $geoname;
+
+"Site Groups":
+LOAD distinct    
+    If( Sitegroup_Type_Name <> 'Division', Sitegroup_Name) as 'Group',
+    Client_Hier_Id as %Client_Hier_Id
+FROM [$(v_RA_QVD_Client_Connection)\SiteGroup_Site_Account_Security_Role_Client_Hier.qvd](qvd)
+where exists(%Client_Hier_Id,Client_Hier_Id);
+
+// //	need to find the highest month we are chasing.
+// Current_Month_Check:
+// load max(IC_Service_Month_Id) as current_month
+// FROM  [$(v_RA_QVD_Client_Connection)\IC_Month.qvd](qvd)
+// where IC_Status <> 'Not Expected';
+// let v_current_chase_date = peek('current_month',0,'Current_Month_Check');
+// trace v_current_chase_date	=	$(v_current_chase_date);
+// drop table Current_Month_Check;
+
+
+
+"IC Record Status":
+LOAD
+    "Invoice_Collection_Account_Config_Id" AS %Invoice_Collection_Account_Config_Id,
+    "Account_Invoice_Collection_Month_Id" AS %Account_Invoice_Collection_Month_Id,
+    "IC_Service_Month_Id" AS %Service_Month_Id, 
+    autonumber("Invoice_Collection_Account_Config_Id" & '|' & "IC_Service_Month_Id") as %IC_Record_Key,
+    capitalize("Billing_Cycle") as [Billing Cycle],
+    "IC_Status" as [Collection Status],
+    "Invoice_Chase_Comment",
+    date("Most_Recent_Chase_Dt",'DD MMM YYYY') as Most_Recent_Chase_Dt,
+    date(Invoice_Collection_Received_Status_Date,'DD MMM YYYY') as [Invoice_Collection_Received_Status_Date],
+    "Person_Chased",
+    "Account_Id" AS %COB_Account_Id,
+    Person_Chased_Email_Address as [Person Chased Email]
+FROM  [$(v_RA_QVD_Client_Connection)\IC_Month.qvd](qvd)
+where not isnull(IC_Status) and not wildmatch(IC_Status,'Not Expected') and [IC_Service_Month_Id] >= $(v_min_global_date)
+and exists (%Account_Id,Account_Id);
+//where not isnull(IC_Status) and [IC_Service_Month_Id] >= $(v_min_global_date) and [IC_Service_Month_Id] <= $(v_current_chase_date)
+//and exists (%Account_Id,Account_Id);
+
+
+//	ACC 2.0.24-192.1 new vendor code
+LEFT JOIN LOAD
+   "Account_Id" AS %COB_Account_Id,
+    "Service_Month_Id" AS %Service_Month_Id,
+    Account_Vendor_Name
+FROM  [$(v_RA_QVD_Client_Connection)\IC_Account_Vendor_Details.qvd](qvd);
+
+
+
+// "IC Record Status Base":
+// LOAD
+//     "Invoice_Collection_Account_Config_Id" AS %Invoice_Collection_Account_Config_Id,
+//     "Account_Invoice_Collection_Month_Id" AS %Account_Invoice_Collection_Month_Id,
+//     "IC_Service_Month_Id" AS %Service_Month_Id,    
+//     "Billing_Cycle",
+//     "IC_Status",
+//     "Invoice_Chase_Comment",
+//     date("Most_Recent_Chase_Dt",'DD MMM YYYY') as Most_Recent_Chase_Dt,
+//     "Person_Chased",
+//     "Account_Id" AS %COB_Account_Id,
+//     Invoice_Collection_Received_Status_Date	//	Added field 2022-05-18
+// FROM  [$(v_RA_QVD_Client_Connection)\IC_Month.qvd](qvd)
+// where not isnull(IC_Status) and [IC_Service_Month_Id] >= $(v_min_global_date) and [IC_Service_Month_Id] <= $(v_current_chase_date)
+// and exists (%Account_Id,Account_Id);
+
+// //	ACC 2.0.24-192.1 old vendor code
+// LEFT JOIN LOAD
+//    "Account_Id" AS %COB_Account_Id,
+//     "Service_Month_Id" AS %Service_Month_Id,
+//     minstring("Consolidated_Billing_Vendor_Name") as Consolidated_Billing_Vendor_Name
+// FROM  [$(v_RA_QVD_Client_Connection)\COB_Vendor_Name.qvd](qvd)
+// group by Account_Id, Service_Month_Id;
+//
+// //	ACC 2.0.24-192.1 old vendor code
+// left JOIN LOAD DISTINCT "%Account_Id" AS %COB_Account_Id,"Account Type" AS Acctype, "Utility Name" AS UtilName, "Supplier Name" AS SupName
+// Resident "Security Account";
+
+// // //	ACC 2.0.24-192.1 removed the old vendor logic
+// "IC Record Status":
+// LOAD %Invoice_Collection_Account_Config_Id,
+//     %Account_Invoice_Collection_Month_Id,
+//     %Service_Month_Id,
+//     //	Creating this key as a counter because "%Account_Invoice_Collection_Month_Id" duplicates rows for issues within this table.
+//     autonumber(%Invoice_Collection_Account_Config_Id & '|' & %Service_Month_Id) as %IC_Record_Key,
+//     capitalize("Billing_Cycle") as [Billing Cycle],
+//     "IC_Status" as [Collection Status],
+//     "Invoice_Chase_Comment",
+//     "Most_Recent_Chase_Dt",
+//     //	2022-03-01	ACC	Place Holder until DB change is made:
+//     //date("Most_Recent_Chase_Dt"+10,'YYYY-MM-DD') as [Invoice_Collection_Received_Status_Date],
+//     date(Invoice_Collection_Received_Status_Date,'DD MMM YYYY') as [Invoice_Collection_Received_Status_Date],
+//     "Person_Chased"
+//     //	ACC 2.0.24-192.1 removed the old vendor logic
+//     ,IF(IsNull(Consolidated_Billing_Vendor_Name) , 
+//     (IF([Acctype]='Utility',[UtilName], [SupName]))
+//          , Consolidated_Billing_Vendor_Name) AS "Account_Vendor_COB_Combined"
+// Resident "IC Record Status Base";
+
+// DROP TABLE "IC Record Status Base";
+
+//	ACC 2.0.24-192.1 END
+
+"IC Issue":
+left keep
+LOAD "Invoice_Collection_Issue_Log_Id" AS 'IC Issue Id',
+	"Invoice_Collection_Activity_Id" AS 'Issue Id',
+    "Account_Invoice_Collection_Month_Id" AS %Account_Invoice_Collection_Month_Id,
+    if(Issue_Status='Close','Resolved',Issue_Status) as [Issue Status],
+    //Issue_Status,
+    "Issue_Entity_Owner" as [Issue Owner],
+    //"Issue_Owner_User_Id" AS %Issue_Owner_User_Id,
+    "Type_Of_Issue_Owner",
+    "Esclation_Dt",
+    "Resolution_Dt",
+    "Issue_Type" as [Issue Type],
+    date("Missing_Period_Start_Dt",'DD MMM YYYY') as Missing_Period_Start_Dt,
+    date("Missing_Period_End_Dt",'DD MMM YYYY') as Missing_Period_End_Dt,
+    "Issue_Comment",
+    Issue_Sub_Type as [Issue Sub Type],
+    //if(Issue_Report_Status='Esclated','Escalated',Issue_Report_Status) as [Issue Category]
+    //	https://summit.jira.com/browse/BI-1319		// wait to implement // not dev tested.
+    if(Issue_Report_Status='Esclated' or (isnull(Issue_Sub_Type) and isnull(Issue_Report_Status)),'Escalated',Issue_Report_Status) as [Issue Category]
+FROM  [$(v_RA_QVD_Client_Connection)\IC_Issue.qvd](qvd);
+concatenate([IC Issue]) load ' ' as [Issue Status] autogenerate 1; // BI-1762 This prevents "Billing Periods Affected" KPI set analysis from showing all records when the Issue Status is 100% null (new config) 
+
+
+
+
+
+///$tab Services
+/***********************************************************************************************************************************************
+"Services"
+
+Note1: In case of emission enable below fields
+Client_Commodity_Id, Scope
+
+Note2: below fields used in case of Cost&Usage detail level report
+Is_Shown_on_Site,Is_Shown_On_Account,Is_Shown_On_Invoice,UOM_Entity_Type 
+***********************************************************************************************************************************************/
+Services:
+LOAD Distinct
+    Commodity_Id as %Commodity_Id,
+    Bucket_Master_Id as %Bucket_Master_Id ,
+    Commodity_Name as 'Service'    
+FROM [$(v_RA_QVD_Client_Connection)\Commodity_Bucket_Master.qvd](qvd);
+//	QQ: 2022-02-17	ACC Why are we loading the field Bucket_Master_Id when we are not actually utilizing before dropping the table directly below?
+
+"Account_Services":
+LOAD distinct
+    Account_Id AS [%Account_Id]
+    ,Commodity_Id AS [%Commodity_Id]
+FROM [$(v_RA_QVD_Client_Connection)\Account_Commodity.qvd] (qvd);
+INNER JOIN LOAD %Account_Id AS [%Account_Id]
+Resident "Security Account";
+INNER JOIN LOAD    
+    %Commodity_Id,
+    	Service
+Resident Services;
+
+drop table Services;
+
+
+/**********************************************************************************************************************************************
+	This table gets all the account services in a comma separated format
+**********************************************************************************************************************************************/
+
+"Account_Commodity_CSV":
+LOAD 
+	%Account_Id
+    ,Concat(DISTINCT Service,', ') AS Account_Service_All
+Resident Account_Services
+GROUP BY [%Account_Id];
+
+/**********************************************************************************************************************************************
+Below line can be commented out if we do not require to show the each commodity of an account in a separate line
+**********************************************************************************************************************************************/
+//DROP TABLE Account_Services;
+///$tab Calendar
+[Client Name]:
+FIRST 1 LOAD [Client Name] as [Client]
+FROM [$(v_RA_QVD_Global_Connection)/Client_Info.qvd](qvd)
+WHERE Client_Id = '$(v_ClientId)';
+
+Let v_ClientName = Peek('Client', -1, 'Client Name');
+
+//	Determine the Fiscal Year Offset
+[ClientFiscalOffset]:
+load Distinct Client_Fiscal_Offset From  [$(v_RA_QVD_Client_Connection)/SiteGroup_Site_Security_Role_Client_Hier.qvd](qvd);
+	
+if NoOfRows('ClientFiscalOffset') = 0 THEN
+   	Load Distinct Client_Fiscal_Offset From  [$(v_RA_QVD_Client_Connection)/SiteGroup_Site_Security_Role_Client_Hier.qvd](qvd);
+End if;
+
+LET v_Client_Fiscal_Offset = Peek('Client_Fiscal_Offset');
+LET v_CurrentFiscalYear = Year(YearEnd(Today(), 0, Mod( $(v_Client_Fiscal_Offset), 12) + 1)) ;
+
+Join Load $(v_CurrentFiscalYear) as [%Current Fiscal Year] AutoGenerate(1);
+
+/***********************************************************************************************************************************************
+"Calendar"
+***********************************************************************************************************************************************/
+date_range:
+load max(%Service_Month_Id) as max_date
+	,min(%Service_Month_Id) as min_date
+resident [IC Record Status];
+
+let v_max_date	=	peek('max_date',0,'date_range');
+trace v_max_date	=	$(v_max_date);
+let v_min_date	=	peek('min_date',0,'date_range');
+trace v_min_date	=	$(v_min_date);
+let v_min_date_add_13	=	addmonths($(v_min_date),13);
+trace v_min_date_add_13	=	$(v_min_date_add_13);
+
+Calendar:
+LOAD
+    Service_Month_Id as %Service_Month_Id
+    ,date(Service_Month,'DD MMM YYYY') as 'Service Month'
+    ,date(Service_Month,'MMM YYYY') as Service_Month_Format
+    ,Year_Number as 'Year'
+    ,Month_Name as 'Month'
+    //,Year(YearEnd(Service_Month_Id, 0, Mod(  $(v_Client_Fiscal_Offset), 12))) as [Fiscal Year] 
+    ,Year(YearEnd(Service_Month, 0, Mod(  $(v_Client_Fiscal_Offset), 12) + 1)) as [Fiscal Year] 
+    ,if(Service_Month>=addmonths($(v_current_chase_date),-12) and Service_Month<=$(v_current_chase_date)
+    	,1,0) as Current_13_Flag
+    ,if(Service_Month>=addmonths($(v_current_chase_date),-1) and Service_Month<=$(v_current_chase_date)
+    	,1,0) as Current_Full_Month_Flag
+    //,if(Service_Month_Id>=addmonths($(v_current_chase_date),-12) and Service_Month_Id<=$(v_current_chase_date)
+    //	,1,0) as Current_13_Flag
+    //,if(Service_Month_Id>=addmonths($(v_current_chase_date),-1) and Service_Month_Id<=$(v_current_chase_date)
+    //	,1,0) as Current_Full_Month_Flag
+    //,if(Service_Month_Id>=addmonths($(v_max_date),-12) and Service_Month_Id<=$(v_max_date)
+    //	,1,0) as Current_13_Flag
+    //,if(Service_Month_Id>=addmonths($(v_max_date),-1) and Service_Month_Id<=$(v_max_date)
+    //	,1,0) as Current_Full_Month_Flag
+FROM [$(v_RA_QVD_Global_Connection)\Date_Dim.qvd](qvd)
+where Service_Month_Id >= $(v_min_date) and Service_Month_Id <= $(v_max_date);
+
+temp_M2_AsOf:
+load distinct [Service Month] as [M-2 Month] resident Calendar
+where [Service Month] >= '$(v_min_date_add_13)';
+join load distinct [Service Month] resident Calendar;
+
+M2_AsOf:
+noconcatenate
+load [M-2 Month]
+	,[Service Month]
+	,date([M-2 Month],'MMM YY') & ': ' & date(addmonths([M-2 Month],-13),'MMM YY') & ' to ' & date(addmonths([M-2 Month],-2),'MMM YY') as [M-2 Range]
+resident temp_M2_AsOf
+where [Service Month] >= addmonths([M-2 Month],-13) and [Service Month] <= addmonths([M-2 Month],-2)
+order by [M-2 Month] asc;
+drop table temp_M2_AsOf;
+
+// Variable must be from Highest Escalation Date...
+let v_today	=	num(today());
+trace v_today	=	$(v_today);
+
+let v_today_add_30	=	$(v_today)+30;
+trace v_today_add_30;
+
+
+Calendar_Issue_Escalation_Date:
+load distinct Esclation_Dt
+	,if(Esclation_Dt>=addmonths($(v_today),-1) and Esclation_Dt<=$(v_today)
+    	,1,0) as Current_Full_Month_Escalation_Flag
+resident [IC Issue];
+
+[Map URL]:
+LOAD
+"Map URL"
+FROM [$(v_RA_QVD_Global_Connection)/RA_Map_Background.qvd]
+(qvd);
+
+
+///$tab Colors
+set v_Color_SE_Dark_Green = rgb(0,118,38);
+set v_Color_SE_Spruce_Green = rgb(0,149,48); // AKA SE Logo Green
+set v_Color_SE_Medium_Green = rgb(50,173,60);
+set v_Color_SE_Life_Green = rgb(61,205,88);
+set v_Color_SE_Seeding_Green = rgb(135,210,0);
+set v_Color_SE_Light_Green = rgb(112,224,124);
+set v_Color_SE_Dark_Sky_Blue = rgb(0,135,205);
+set v_Color_SE_Medium_Blue = rgb(33,155,253);
+set v_Color_SE_Sky_Blue = rgb(66,180,230);
+set v_Color_SE_Fuschia_Red = rgb(177,0,67);
+set v_Color_SE_Red = rgb(210,10,10);
+set v_Color_SE_Honeysuckle_Orange = rgb(228,127,0);
+set v_Color_SE_Sunflower_Yellow = rgb(255,209,0);
+set v_Color_SE_Sky_Blue_10p = rgb(236,247,252);
+set v_Color_SE_Red_10p = rgb(252,234,231);
+set v_Color_SE_Black = rgb(15,15,15);
+set v_Color_SE_Anthracite_Grey = rgb(51,51,51);
+set v_Color_SE_Ultra_Dark_Grey = rgb(67,67,67);
+set v_Color_SE_Super_Dark_Grey = rgb(80,85,89);
+set v_Color_SE_Dark_Grey = rgb(98,100,105);
+set v_Color_SE_Medium_Grey = rgb(159,160,164);
+set v_Color_SE_Light_Grey = rgb(203,203,203);
+set v_Color_SE_Super_Light_Grey = rgb(230,230,230);
+
+Set v_Issue_Type_Colors = "pick(1+match([Issue Type], 'Other','More Info Required','Invalid Login Details','Non Cooperative',
+'No Account Number', 'Invoice not Available', 'LOA Issues','Charge Per Invoice', 'Website Not Accessible', 'Non Responsive' ), 
+rgb(210,210,210), v_Color_SE_Honeysuckle_Orange, v_Color_SE_Fuschia_Red, 
+ v_Color_SE_Sunflower_Yellow, v_Color_SE_Life_Green, v_Color_SE_Seeding_Green, v_Color_SE_Light_Grey,v_Color_SE_Sky_Blue, v_Color_SE_Red,v_Color_SE_Dark_Green, v_Color_SE_Dark_Sky_Blue)";
+ 
+
+///$tab Custom Reporting
+Collection_Overview_Custom_Dim:
+load * inline [
+%co_dim, %co_dim_id
+Division,a
+Country,b
+Service,d
+Vendor,e
+Alternate Account Number,g
+Invoice Source,h
+Billing Cycle,i];
+
+set v_Co_Detail		=	0;
+
+// date:
+// load date(date#(44803,'YYYY-MM-DD'),'DD MMM YYYY') as newdate
+// ,date#(44803,'YYYY-MM-DD') as newdate2
+// ,date('2022-08-30','DD MMM YYYY') as newdate3
+// autogenerate (1);
+
+set v_Last_12_Mth = "only(if(GetSelectedCount([Service Month])=12 and GetPossibleCount(Current_13_Flag)=1,0,1))";
+
+
+//clean up
+drop field %COB_Account_Id
+	,Current_Full_Month_Flag
+    ,Display_Account_Number
+    ,Expected_Invoice_Frequency
+    ,Expected_Invoice_Receive_Day
+    ,Expected_Invoice_Receive_Lag_Month
+    ,Invoice_Chase_Comment
+    ,Invoice_Collection_Service_Start_Dt
+    ,Is_Chase_Activated
+    ,max_date
+    ,min_date;
+
+
+///$tab Debug Data Model
+//	This section simply creates a qvd for us to more easily research issues. Creates a flat table of the most-used tables
+//	Note that rows might be duplicated depending on key replication in other tables especially security and ic_issue.
+//	Issue comments have been dropped.
+
+//	are we creating this today?
+if v_debug	=	1 then
+
+//	qualify all non-key fields
+qualify *;
+unqualify %Account_Invoice_Collection_Month_Id
+	,%Invoice_Collection_Account_Config_Id
+    ,%Account_Id;
+    
+ic_month:
+load * resident [IC Record Status];
+
+ic_issue:
+load * resident [IC Issue];
+
+ic_acc_cfg:
+load * resident [IC Account Config];
+
+sgsasrch:
+load min(%SECURITYROLE) as %SECURITYROLE,
+    %Client_Hier_Id,
+    Site,
+    Division,
+    State,
+    Country,
+    Location,
+    %Account_Id,
+    [Account Type],
+    [Utility Account Number],
+    [Supplier Account Number],
+    [Account Number],
+    Display_Account_Number,
+	[Utility Name],
+    [Supplier Name]
+resident [Security Account]
+group by %Client_Hier_Id,
+    Site,
+    Division,
+    State,
+    Country,
+    Location,
+    %Account_Id,
+    [Account Type],
+    [Utility Account Number],
+    [Supplier Account Number],
+    [Account Number],
+    Display_Account_Number,
+	[Utility Name],
+    [Supplier Name];
+
+unqualify *;
+
+//	create flat file
+IC_debug_datamodel:
+noconcatenate
+load * resident ic_month;
+join load * resident ic_issue;
+join load * resident ic_acc_cfg;
+join load * resident sgsasrch;
+
+//	removing the comment field as it is very text heavy and dramatically increases size of qvds.
+drop field [ic_issue.Issue_Comment];
+
+//	store to qvd
+LOAD
+    client_id
+FROM [lib://RAExtractions/11661/GR_Extract_BP_Portfolio.qvd]
+(qvd);
+
+store IC_debug_datamodel into [lib://RAExtractions/$(v_FolderName)\IC_debug_datamodel.qvd](qvd);
+
+//	destroy all evidence
+drop table ic_month
+	,ic_issue
+    ,ic_acc_cfg
+    ,sgsasrch
+    ,IC_debug_datamodel;
+    
+endif;

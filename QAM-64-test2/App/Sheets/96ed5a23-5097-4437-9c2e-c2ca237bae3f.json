@@ -1,0 +1,731 @@
+[
+    {
+        "qProperty": {
+            "qInfo": {
+                "qId": "96ed5a23-5097-4437-9c2e-c2ca237bae3f",
+                "qType": "sheet"
+            },
+            "qMetaDef": {
+                "title": "Dashboard (4)",
+                "description": ""
+            },
+            "rank": 19.5,
+            "thumbnail": {
+                "qStaticContentUrlDef": {
+                    "qUrl": "/appcontent/12a37d50-ec71-4a8c-b7b7-1ba8375d7154/01_Dash.jpg"
+                }
+            },
+            "columns": 36,
+            "rows": 18,
+            "cells": [
+                {
+                    "name": "f0d24961-9fc8-4d73-87fb-1374f7a79a01",
+                    "type": "piechart",
+                    "col": 0,
+                    "row": 10,
+                    "colspan": 11,
+                    "rowspan": 8,
+                    "bounds": {
+                        "y": 55.55555555555556,
+                        "x": 0,
+                        "width": 30.555555555555557,
+                        "height": 44.44444444444444
+                    }
+                },
+                {
+                    "name": "71b4fe5f-8a5d-4022-9b83-2275f2895575",
+                    "type": "piechart",
+                    "col": 12,
+                    "row": 10,
+                    "colspan": 12,
+                    "rowspan": 8,
+                    "bounds": {
+                        "y": 55.55555555555556,
+                        "x": 33.33333333333333,
+                        "width": 33.33333333333333,
+                        "height": 44.44444444444444
+                    }
+                },
+                {
+                    "name": "789df591-942e-4671-aae3-64891f5e7733",
+                    "type": "piechart",
+                    "col": 25,
+                    "row": 10,
+                    "colspan": 11,
+                    "rowspan": 8,
+                    "bounds": {
+                        "y": 55.55555555555556,
+                        "x": 69.44444444444444,
+                        "width": 30.555555555555557,
+                        "height": 44.44444444444444
+                    }
+                },
+                {
+                    "name": "4133ff1e-7573-4874-90e1-6286526c57f5",
+                    "type": "filterpane",
+                    "col": 18,
+                    "row": 0,
+                    "colspan": 18,
+                    "rowspan": 2,
+                    "bounds": {
+                        "y": 0,
+                        "x": 50,
+                        "width": 50,
+                        "height": 11.11111111111111
+                    }
+                },
+                {
+                    "name": "357945e9-c590-4b5f-bc92-f31ff8810e35",
+                    "type": "table",
+                    "col": 25,
+                    "row": 3,
+                    "colspan": 11,
+                    "rowspan": 6,
+                    "bounds": {
+                        "y": 16.666666666666664,
+                        "x": 69.44444444444444,
+                        "width": 30.555555555555557,
+                        "height": 33.33333333333333
+                    }
+                },
+                {
+                    "name": "35d34651-eb0d-40ae-8403-b6ca66b0096b",
+                    "type": "kpi",
+                    "col": 0,
+                    "row": 3,
+                    "colspan": 6,
+                    "rowspan": 6,
+                    "bounds": {
+                        "y": 16.666666666666664,
+                        "x": 0,
+                        "width": 16.666666666666664,
+                        "height": 33.33333333333333
+                    }
+                },
+                {
+                    "name": "fb25787b-3785-472f-8862-7db53069e5c6",
+                    "type": "kpi",
+                    "col": 6,
+                    "row": 3,
+                    "colspan": 6,
+                    "rowspan": 3,
+                    "bounds": {
+                        "y": 16.666666666666664,
+                        "x": 16.666666666666664,
+                        "width": 16.666666666666664,
+                        "height": 16.666666666666664
+                    }
+                },
+                {
+                    "name": "bf527436-06b0-43c9-9f96-f0edaa195c58",
+                    "type": "kpi",
+                    "col": 6,
+                    "row": 6,
+                    "colspan": 6,
+                    "rowspan": 3,
+                    "bounds": {
+                        "y": 33.33333333333333,
+                        "x": 16.666666666666664,
+                        "width": 16.666666666666664,
+                        "height": 16.666666666666664
+                    }
+                },
+                {
+                    "name": "06a1748e-155f-4aab-8344-a99a386df4b9",
+                    "type": "kpi",
+                    "col": 12,
+                    "row": 3,
+                    "colspan": 6,
+                    "rowspan": 3,
+                    "bounds": {
+                        "y": 16.666666666666664,
+                        "x": 33.33333333333333,
+                        "width": 16.666666666666664,
+                        "height": 16.666666666666664
+                    }
+                },
+                {
+                    "name": "cd3f3026-3776-4507-b682-4a636dc7b79f",
+                    "type": "kpi",
+                    "col": 12,
+                    "row": 6,
+                    "colspan": 6,
+                    "rowspan": 3,
+                    "bounds": {
+                        "y": 33.33333333333333,
+                        "x": 33.33333333333333,
+                        "width": 16.666666666666664,
+                        "height": 16.666666666666664
+                    }
+                },
+                {
+                    "name": "59487910-2fe6-4a32-8ffc-1fc5d37d0226",
+                    "type": "kpi",
+                    "col": 18,
+                    "row": 3,
+                    "colspan": 6,
+                    "rowspan": 3,
+                    "bounds": {
+                        "y": 16.666666666666664,
+                        "x": 50,
+                        "width": 16.666666666666664,
+                        "height": 16.666666666666664
+                    }
+                },
+                {
+                    "name": "4b4ccf92-594c-4f04-9aed-8c009a9a738f",
+                    "type": "kpi",
+                    "col": 18,
+                    "row": 6,
+                    "colspan": 6,
+                    "rowspan": 3,
+                    "bounds": {
+                        "y": 33.33333333333333,
+                        "x": 50,
+                        "width": 16.666666666666664,
+                        "height": 16.666666666666664
+                    }
+                },
+                {
+                    "name": "b7f08544-120b-4f9b-ac94-47a9b3bb37ff",
+                    "type": "text-image",
+                    "col": 0,
+                    "row": 1,
+                    "colspan": 6,
+                    "rowspan": 1,
+                    "bounds": {
+                        "y": 5.555555555555555,
+                        "x": 0,
+                        "width": 16.666666666666664,
+                        "height": 5.555555555555555
+                    }
+                },
+                {
+                    "name": "1a380861-df7b-4f4c-b0ca-1b0139524114",
+                    "type": "text-image",
+                    "col": 25,
+                    "row": 2,
+                    "colspan": 11,
+                    "rowspan": 1,
+                    "bounds": {
+                        "y": 11.11111111111111,
+                        "x": 69.44444444444444,
+                        "width": 30.555555555555557,
+                        "height": 5.555555555555555
+                    }
+                },
+                {
+                    "name": "47c9f037-8ce8-4874-a780-48f4c78475e8",
+                    "type": "filterpane",
+                    "col": 6,
+                    "row": 0,
+                    "colspan": 12,
+                    "rowspan": 2,
+                    "bounds": {
+                        "y": 0,
+                        "x": 16.666666666666664,
+                        "width": 33.33333333333333,
+                        "height": 11.11111111111111
+                    }
+                },
+                {
+                    "name": "a1cb43b1-1532-4dfa-9941-7859a361a58a",
+                    "type": "action-button",
+                    "col": 0,
+                    "row": 0,
+                    "colspan": 6,
+                    "rowspan": 1,
+                    "bounds": {
+                        "y": 0,
+                        "x": 0,
+                        "width": 16.666666666666664,
+                        "height": 5.555555555555555
+                    }
+                }
+            ],
+            "gridResolution": "large",
+            "gridMode": "edit"
+        },
+        "qChildren": [
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "4b4ccf92-594c-4f04-9aed-8c009a9a738f",
+                        "qType": "kpi"
+                    },
+                    "qExtendsId": "0ef49c92-0f65-4da6-9d1f-8e32cda0cd89",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "4133ff1e-7573-4874-90e1-6286526c57f5",
+                        "qType": "filterpane"
+                    },
+                    "qExtendsId": "ddd2fdb8-2763-4d11-982c-eaf462d47203",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "789df591-942e-4671-aae3-64891f5e7733",
+                        "qType": "piechart"
+                    },
+                    "qExtendsId": "972c265f-8aad-4c37-a49e-151b9462f601",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "f0d24961-9fc8-4d73-87fb-1374f7a79a01",
+                        "qType": "piechart"
+                    },
+                    "qExtendsId": "9e075126-f72d-4046-a1e9-1e92abd56df7",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "71b4fe5f-8a5d-4022-9b83-2275f2895575",
+                        "qType": "piechart"
+                    },
+                    "qExtendsId": "435d6e16-1f80-4508-a08b-2b45a0b789a2",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "fb25787b-3785-472f-8862-7db53069e5c6",
+                        "qType": "kpi"
+                    },
+                    "qExtendsId": "28f73170-6ed4-4440-9960-a01d1c129473",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "357945e9-c590-4b5f-bc92-f31ff8810e35",
+                        "qType": "table"
+                    },
+                    "qExtendsId": "c0348770-afe9-49d3-aa1d-fd949728facd",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "06a1748e-155f-4aab-8344-a99a386df4b9",
+                        "qType": "kpi"
+                    },
+                    "qExtendsId": "c3bd1e32-58b2-4443-ad68-2bf1b6a34aa6",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "b7f08544-120b-4f9b-ac94-47a9b3bb37ff",
+                        "qType": "text-image"
+                    },
+                    "qMetaDef": {},
+                    "qHyperCubeDef": {
+                        "qDimensions": [],
+                        "qMeasures": [
+                            {
+                                "qDef": {
+                                    "qTags": [],
+                                    "qGrouping": "N",
+                                    "qDef": "=minstring([Service Month]) & ' to ' & maxstring([Service Month])",
+                                    "qNumFormat": {
+                                        "qType": "U",
+                                        "qnDec": 10,
+                                        "qUseThou": 0
+                                    },
+                                    "qAccumulate": 0,
+                                    "qActiveExpression": 0,
+                                    "qExpressions": [],
+                                    "autoSort": true,
+                                    "cId": "HPAVnHJ",
+                                    "numFormatFromTemplate": true
+                                },
+                                "qSortBy": {
+                                    "qSortByNumeric": -1,
+                                    "qSortByLoadOrder": 1,
+                                    "qExpression": {}
+                                },
+                                "qAttributeExpressions": [],
+                                "qAttributeDimensions": [],
+                                "qCalcCond": {},
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "qTrendLines": [],
+                                "qMiniChartDef": {
+                                    "qSortBy": {
+                                        "qExpression": {}
+                                    },
+                                    "qOtherTotalSpec": {
+                                        "qOtherMode": "OTHER_OFF",
+                                        "qOtherCounted": {},
+                                        "qOtherLimit": {},
+                                        "qOtherLimitMode": "OTHER_GT_LIMIT",
+                                        "qForceBadValueKeeping": true,
+                                        "qApplyEvenWhenPossiblyWrongResult": true,
+                                        "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                        "qTotalMode": "TOTAL_OFF",
+                                        "qReferencedExpression": {}
+                                    },
+                                    "qMaxNumberPoints": -1,
+                                    "qAttributeExpressions": []
+                                }
+                            }
+                        ],
+                        "qInterColumnSortOrder": [
+                            0
+                        ],
+                        "qInitialDataFetch": [],
+                        "qReductionMode": "N",
+                        "qMode": "S",
+                        "qPseudoDimPos": -1,
+                        "qNoOfLeftDims": -1,
+                        "qMaxStackedCells": 5000,
+                        "qCalcCond": {},
+                        "qTitle": {},
+                        "qCalcCondition": {
+                            "qCond": {},
+                            "qMsg": {}
+                        },
+                        "qColumnOrder": [],
+                        "qExpansionState": [],
+                        "qDynamicScript": [],
+                        "qLayoutExclude": {
+                            "qHyperCubeDef": {
+                                "qDimensions": [],
+                                "qMeasures": [],
+                                "qInterColumnSortOrder": [],
+                                "qInitialDataFetch": [],
+                                "qReductionMode": "N",
+                                "qMode": "S",
+                                "qPseudoDimPos": -1,
+                                "qNoOfLeftDims": -1,
+                                "qMaxStackedCells": 5000,
+                                "qCalcCond": {},
+                                "qTitle": {},
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "qColumnOrder": [],
+                                "qExpansionState": [],
+                                "qDynamicScript": []
+                            }
+                        }
+                    },
+                    "showTitles": false,
+                    "title": "",
+                    "subtitle": "",
+                    "footnote": "",
+                    "disableNavMenu": false,
+                    "showDetails": false,
+                    "responsive": "text",
+                    "markdown": "#[Current Range:]({\"index\":-1,\"color\":\"#383837\"}) =[](HPAVnHJ)",
+                    "images": [],
+                    "background": {
+                        "isUsed": false,
+                        "size": "auto",
+                        "position": "topLeft",
+                        "url": {}
+                    },
+                    "visualization": "text-image"
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "35d34651-eb0d-40ae-8403-b6ca66b0096b",
+                        "qType": "kpi"
+                    },
+                    "qExtendsId": "dae0825a-dff4-46eb-8bb9-ab77195f36af",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "bf527436-06b0-43c9-9f96-f0edaa195c58",
+                        "qType": "kpi"
+                    },
+                    "qExtendsId": "2ca58fab-a068-4991-9ff8-0e635ddb419f",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "59487910-2fe6-4a32-8ffc-1fc5d37d0226",
+                        "qType": "kpi"
+                    },
+                    "qExtendsId": "dce4b0ee-c2e1-47f1-ba27-8657bf3badf2",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "cd3f3026-3776-4507-b682-4a636dc7b79f",
+                        "qType": "kpi"
+                    },
+                    "qExtendsId": "84247b15-6e8c-4770-bdb4-19b5a75dff68",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "47c9f037-8ce8-4874-a780-48f4c78475e8",
+                        "qType": "filterpane"
+                    },
+                    "qExtendsId": "02d2b01e-ee32-4a88-bfae-d0ee1f6bec13",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "a1cb43b1-1532-4dfa-9941-7859a361a58a",
+                        "qType": "action-button"
+                    },
+                    "qMetaDef": {},
+                    "actions": [
+                        {
+                            "actionLabel": "Clear Service Month",
+                            "actionType": "clearField",
+                            "bookmark": "",
+                            "field": "Service Month",
+                            "variable": "",
+                            "showSystemVariables": false,
+                            "softLock": false,
+                            "value": "",
+                            "partial": false,
+                            "automation": "",
+                            "automationPostData": false,
+                            "cId": "SbNHUwU"
+                        },
+                        {
+                            "actionLabel": "Select Flag",
+                            "actionType": "selectValues",
+                            "bookmark": "",
+                            "field": "Current_13_Flag",
+                            "variable": "",
+                            "showSystemVariables": false,
+                            "softLock": false,
+                            "value": "1",
+                            "partial": false,
+                            "automation": "",
+                            "automationPostData": false,
+                            "cId": "EWxRqFA"
+                        },
+                        {
+                            "actionLabel": "Select Latest 12 Months",
+                            "actionType": "selectPossible",
+                            "bookmark": "77b3c873-f7a8-43dd-8018-b4ccc6770efc",
+                            "field": "Service Month",
+                            "variable": "",
+                            "showSystemVariables": false,
+                            "softLock": false,
+                            "value": {
+                                "qStringExpression": {
+                                    "qExpr": "=concat(if(Current_13_Flag=1,chr(34)&[Service Month]&chr(34)),';')\r\n//=[Service Month]=if(Current_Full_Month_Flag=1,[Service Month])"
+                                }
+                            },
+                            "partial": false,
+                            "automation": "",
+                            "automationPostData": false,
+                            "cId": "LJdC"
+                        },
+                        {
+                            "actionLabel": "Unselect Flag",
+                            "actionType": "clearField",
+                            "bookmark": "",
+                            "field": "Current_13_Flag",
+                            "variable": "",
+                            "showSystemVariables": false,
+                            "softLock": false,
+                            "value": "",
+                            "partial": false,
+                            "automation": "",
+                            "automationPostData": false,
+                            "cId": "pumfL"
+                        }
+                    ],
+                    "navigation": {
+                        "action": "none",
+                        "appId": "",
+                        "sheet": "",
+                        "story": "",
+                        "websiteUrl": "",
+                        "sameWindow": false,
+                        "odagLink": ""
+                    },
+                    "useEnabledCondition": true,
+                    "enabledCondition": {
+                        "qValueExpression": {
+                            "qExpr": "=if(GetSelectedCount([Service Month])=13 and GetPossibleCount(Current_13_Flag)=1,0,1)"
+                        }
+                    },
+                    "showTitles": false,
+                    "title": "Last 12 months button",
+                    "subtitle": "",
+                    "footnote": "",
+                    "disableNavMenu": true,
+                    "showDetails": false,
+                    "showDetailsExpression": false,
+                    "style": {
+                        "label": "Latest 12 Months",
+                        "font": {
+                            "size": 0.93,
+                            "useColorExpression": false,
+                            "color": {
+                                "index": -1,
+                                "color": null
+                            },
+                            "colorExpression": "",
+                            "style": {
+                                "bold": false,
+                                "italic": false,
+                                "underline": false
+                            },
+                            "align": "center"
+                        },
+                        "background": {
+                            "useColorExpression": true,
+                            "color": {
+                                "index": -1,
+                                "color": null
+                            },
+                            "colorExpression": {
+                                "qStringExpression": {
+                                    "qExpr": "=if(GetSelectedCount([Service Month])=13 and GetPossibleCount(Current_13_Flag)=1,rgb(160,160,160),rgb(90,136,203))\r\n//=if(GetFieldSelections(Current_13_Flag),rgb(90,136,203),rgb(160,160,160))"
+                                }
+                            },
+                            "useImage": false,
+                            "size": "auto",
+                            "position": "centerCenter",
+                            "url": {
+                                "qStaticContentUrlDef": {}
+                            }
+                        },
+                        "border": {
+                            "useBorder": true,
+                            "radius": 0.24,
+                            "width": 0,
+                            "useColorExpression": false,
+                            "color": {
+                                "index": -1,
+                                "color": null
+                            },
+                            "colorExpression": ""
+                        },
+                        "icon": {
+                            "useIcon": true,
+                            "iconType": "calendar",
+                            "position": "left"
+                        }
+                    },
+                    "visualization": "action-button",
+                    "version": "1.18.1"
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "1a380861-df7b-4f4c-b0ca-1b0139524114",
+                        "qType": "text-image"
+                    },
+                    "qMetaDef": {},
+                    "qHyperCubeDef": {
+                        "qDimensions": [],
+                        "qMeasures": [],
+                        "qInterColumnSortOrder": [],
+                        "qInitialDataFetch": [],
+                        "qReductionMode": "N",
+                        "qMode": "S",
+                        "qPseudoDimPos": -1,
+                        "qNoOfLeftDims": -1,
+                        "qMaxStackedCells": 5000,
+                        "qCalcCond": {},
+                        "qTitle": {},
+                        "qCalcCondition": {
+                            "qCond": {},
+                            "qMsg": {}
+                        },
+                        "qColumnOrder": [],
+                        "qExpansionState": [],
+                        "qDynamicScript": [],
+                        "qLayoutExclude": {
+                            "qHyperCubeDef": {
+                                "qDimensions": [],
+                                "qMeasures": [],
+                                "qInterColumnSortOrder": [],
+                                "qInitialDataFetch": [],
+                                "qReductionMode": "N",
+                                "qMode": "S",
+                                "qPseudoDimPos": -1,
+                                "qNoOfLeftDims": -1,
+                                "qMaxStackedCells": 5000,
+                                "qCalcCond": {},
+                                "qTitle": {},
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "qColumnOrder": [],
+                                "qExpansionState": [],
+                                "qDynamicScript": []
+                            }
+                        }
+                    },
+                    "showTitles": false,
+                    "title": "",
+                    "subtitle": "",
+                    "footnote": "",
+                    "disableNavMenu": false,
+                    "showDetails": false,
+                    "responsive": "all",
+                    "markdown": "^[**%[#[Alerts]({\"index\":-1,\"color\":\"#8a0504\"})](4)**](center)",
+                    "images": [],
+                    "background": {
+                        "isUsed": false,
+                        "size": "auto",
+                        "position": "topLeft",
+                        "url": {}
+                    },
+                    "visualization": "text-image"
+                },
+                "qChildren": []
+            }
+        ]
+    }
+]

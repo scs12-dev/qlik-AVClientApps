@@ -1,0 +1,126 @@
+[
+    {
+        "qProperty": {
+            "qInfo": {
+                "qId": "264cfadc-0e5b-41ce-927d-bc709c464f61",
+                "qType": "sheet"
+            },
+            "qMetaDef": {
+                "title": "My new sheet",
+                "description": ""
+            },
+            "rank": 4.5,
+            "thumbnail": {
+                "qStaticContentUrlDef": {}
+            },
+            "columns": 24,
+            "rows": 12,
+            "cells": [
+                {
+                    "name": "NTGfz",
+                    "type": "filterpane",
+                    "col": 0,
+                    "row": 0,
+                    "colspan": 12,
+                    "rowspan": 6,
+                    "bounds": {
+                        "y": 0,
+                        "x": 0,
+                        "width": 50,
+                        "height": 50
+                    }
+                }
+            ],
+            "qChildListDef": {
+                "qData": {
+                    "title": "/title"
+                }
+            },
+            "customRowBase": 12,
+            "gridResolution": "small",
+            "layoutOptions": {
+                "mobileLayout": "LIST"
+            },
+            "gridMode": "edit"
+        },
+        "qChildren": [
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "NTGfz",
+                        "qType": "filterpane"
+                    },
+                    "qMetaDef": {},
+                    "showTitles": false,
+                    "title": "",
+                    "subtitle": "",
+                    "footnote": "",
+                    "disableNavMenu": false,
+                    "showDetails": true,
+                    "showDetailsExpression": false,
+                    "visualization": "filterpane",
+                    "version": "0.15.2",
+                    "qChildListDef": {
+                        "qData": {}
+                    }
+                },
+                "qChildren": [
+                    {
+                        "qProperty": {
+                            "qInfo": {
+                                "qId": "dbab36ab-6a58-4134-bf37-5a3cc1e94bef",
+                                "qType": "listbox"
+                            },
+                            "qMetaDef": {},
+                            "qListObjectDef": {
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [
+                                        "Year"
+                                    ],
+                                    "qFieldLabels": [
+                                        "Year"
+                                    ],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByState": 1,
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": true,
+                                    "cId": "FJC"
+                                },
+                                "qFrequencyMode": "N",
+                                "qShowAlternatives": true,
+                                "qInitialDataFetch": [],
+                                "qExpressions": [],
+                                "showTitles": true,
+                                "title": "",
+                                "subtitle": "",
+                                "footnote": "",
+                                "disableNavMenu": false,
+                                "showDetails": true,
+                                "showDetailsExpression": false,
+                                "qOtherTotalSpec": {}
+                            },
+                            "showTitles": true,
+                            "title": "Year",
+                            "subtitle": "",
+                            "footnote": "",
+                            "disableNavMenu": false,
+                            "showDetails": true,
+                            "showDetailsExpression": false,
+                            "visualization": "listbox"
+                        },
+                        "qChildren": []
+                    }
+                ]
+            }
+        ]
+    }
+]
