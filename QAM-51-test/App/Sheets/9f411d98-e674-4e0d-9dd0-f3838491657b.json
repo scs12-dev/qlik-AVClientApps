@@ -1,0 +1,160 @@
+[
+    {
+        "qProperty": {
+            "qInfo": {
+                "qId": "9f411d98-e674-4e0d-9dd0-f3838491657b",
+                "qType": "sheet"
+            },
+            "qMetaDef": {
+                "title": "Expected Invoice Schedule",
+                "description": ""
+            },
+            "rank": 1.90625,
+            "thumbnail": {
+                "qStaticContentUrlDef": {
+                    "qUrl": "/appcontent/12a37d50-ec71-4a8c-b7b7-1ba8375d7154/01_Expected.jpg"
+                }
+            },
+            "columns": 36,
+            "rows": 18,
+            "cells": [
+                {
+                    "name": "9d16e920-d437-4c6f-913c-11956ddee532",
+                    "type": "text-image",
+                    "col": 0,
+                    "row": 0,
+                    "colspan": 12,
+                    "rowspan": 2,
+                    "bounds": {
+                        "y": 0,
+                        "x": 0,
+                        "width": 33.33333333333333,
+                        "height": 11.11111111111111
+                    }
+                },
+                {
+                    "name": "stUsTa",
+                    "type": "barchart",
+                    "col": 0,
+                    "row": 2,
+                    "colspan": 36,
+                    "rowspan": 7,
+                    "bounds": {
+                        "y": 11.11111111111111,
+                        "x": 0,
+                        "width": 100,
+                        "height": 38.88888888888889
+                    }
+                },
+                {
+                    "name": "JCtPzze",
+                    "type": "table",
+                    "col": 0,
+                    "row": 9,
+                    "colspan": 36,
+                    "rowspan": 9,
+                    "bounds": {
+                        "y": 50,
+                        "x": 0,
+                        "width": 100,
+                        "height": 50
+                    }
+                }
+            ],
+            "gridResolution": "large",
+            "gridMode": "edit"
+        },
+        "qChildren": [
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "stUsTa",
+                        "qType": "barchart"
+                    },
+                    "qExtendsId": "ae46bd76-e55d-4f66-a14f-b63678c0c189",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "9d16e920-d437-4c6f-913c-11956ddee532",
+                        "qType": "text-image"
+                    },
+                    "qMetaDef": {},
+                    "qHyperCubeDef": {
+                        "qDimensions": [],
+                        "qMeasures": [],
+                        "qInterColumnSortOrder": [],
+                        "qInitialDataFetch": [],
+                        "qReductionMode": "N",
+                        "qMode": "S",
+                        "qPseudoDimPos": -1,
+                        "qNoOfLeftDims": -1,
+                        "qMaxStackedCells": 5000,
+                        "qCalcCond": {},
+                        "qTitle": {},
+                        "qCalcCondition": {
+                            "qCond": {},
+                            "qMsg": {}
+                        },
+                        "qColumnOrder": [],
+                        "qExpansionState": [],
+                        "qDynamicScript": [],
+                        "qLayoutExclude": {
+                            "qHyperCubeDef": {
+                                "qDimensions": [],
+                                "qMeasures": [],
+                                "qInterColumnSortOrder": [],
+                                "qInitialDataFetch": [],
+                                "qReductionMode": "N",
+                                "qMode": "S",
+                                "qPseudoDimPos": -1,
+                                "qNoOfLeftDims": -1,
+                                "qMaxStackedCells": 5000,
+                                "qCalcCond": {},
+                                "qTitle": {},
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "qColumnOrder": [],
+                                "qExpansionState": [],
+                                "qDynamicScript": []
+                            }
+                        }
+                    },
+                    "showTitles": false,
+                    "title": "",
+                    "subtitle": "",
+                    "footnote": "",
+                    "disableNavMenu": false,
+                    "showDetails": false,
+                    "responsive": "all",
+                    "markdown": "#[Note: This sheet only calculates an expected date for accounts with monthly billing frequency.]({\"index\":-1,\"color\":\"#540819\"})",
+                    "images": [],
+                    "background": {
+                        "isUsed": false,
+                        "size": "auto",
+                        "position": "topLeft",
+                        "url": {}
+                    },
+                    "visualization": "text-image"
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "JCtPzze",
+                        "qType": "table"
+                    },
+                    "qExtendsId": "7e4e8cb6-e67c-436c-aa38-96edee8a7f2b",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            }
+        ]
+    }
+]

@@ -1,0 +1,425 @@
+[
+    {
+        "qProperty": {
+            "qInfo": {
+                "qId": "eCkvwUY",
+                "qType": "sheet"
+            },
+            "qMetaDef": {
+                "title": "Issues: Issues Explorer Map",
+                "description": ""
+            },
+            "rank": 2,
+            "thumbnail": {
+                "qStaticContentUrlDef": {
+                    "qUrl": "/appcontent/12a37d50-ec71-4a8c-b7b7-1ba8375d7154/01_Map.jpg"
+                }
+            },
+            "columns": 36,
+            "rows": 18,
+            "cells": [
+                {
+                    "name": "Nrfnqp",
+                    "type": "map",
+                    "col": 0,
+                    "row": 1,
+                    "colspan": 30,
+                    "rowspan": 17,
+                    "bounds": {
+                        "y": 5.555555555555555,
+                        "x": 0,
+                        "width": 83.33333333333334,
+                        "height": 94.44444444444444
+                    }
+                },
+                {
+                    "name": "TRwSe",
+                    "type": "table",
+                    "col": 30,
+                    "row": 1,
+                    "colspan": 6,
+                    "rowspan": 7,
+                    "bounds": {
+                        "y": 5.555555555555555,
+                        "x": 83.33333333333334,
+                        "width": 16.666666666666664,
+                        "height": 38.88888888888889
+                    }
+                },
+                {
+                    "name": "WnsPf",
+                    "type": "table",
+                    "col": 30,
+                    "row": 8,
+                    "colspan": 6,
+                    "rowspan": 7,
+                    "bounds": {
+                        "y": 44.44444444444444,
+                        "x": 83.33333333333334,
+                        "width": 16.666666666666664,
+                        "height": 38.88888888888889
+                    }
+                },
+                {
+                    "name": "yfmTWe",
+                    "type": "text-image",
+                    "col": 6,
+                    "row": 0,
+                    "colspan": 12,
+                    "rowspan": 1,
+                    "bounds": {
+                        "y": 0,
+                        "x": 16.666666666666664,
+                        "width": 33.33333333333333,
+                        "height": 5.555555555555555
+                    }
+                },
+                {
+                    "name": "wpGCX",
+                    "type": "Legend-Custom",
+                    "col": 30,
+                    "row": 15,
+                    "colspan": 6,
+                    "rowspan": 3,
+                    "bounds": {
+                        "y": 83.33333333333334,
+                        "x": 83.33333333333334,
+                        "width": 16.666666666666664,
+                        "height": 16.666666666666664
+                    }
+                },
+                {
+                    "name": "dPuJump",
+                    "type": "action-button",
+                    "col": 0,
+                    "row": 0,
+                    "colspan": 6,
+                    "rowspan": 1,
+                    "bounds": {
+                        "y": 0,
+                        "x": 0,
+                        "width": 16.666666666666664,
+                        "height": 5.555555555555555
+                    }
+                }
+            ],
+            "gridResolution": "large",
+            "actions": [],
+            "gridMode": "edit"
+        },
+        "qChildren": [
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "yfmTWe",
+                        "qType": "text-image"
+                    },
+                    "qMetaDef": {},
+                    "qHyperCubeDef": {
+                        "qDimensions": [],
+                        "qMeasures": [
+                            {
+                                "qDef": {
+                                    "qTags": [],
+                                    "qGrouping": "N",
+                                    "qDef": "=minstring([Service Month]) & ' to ' & maxstring([Service Month])",
+                                    "qNumFormat": {
+                                        "qType": "U",
+                                        "qnDec": 10,
+                                        "qUseThou": 0
+                                    },
+                                    "qAccumulate": 0,
+                                    "qActiveExpression": 0,
+                                    "qExpressions": [],
+                                    "autoSort": true,
+                                    "cId": "HPAVnHJ",
+                                    "numFormatFromTemplate": true
+                                },
+                                "qSortBy": {
+                                    "qSortByNumeric": -1,
+                                    "qSortByLoadOrder": 1,
+                                    "qExpression": {}
+                                },
+                                "qAttributeExpressions": [],
+                                "qAttributeDimensions": [],
+                                "qCalcCond": {},
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "qTrendLines": [],
+                                "qMiniChartDef": {
+                                    "qSortBy": {
+                                        "qExpression": {}
+                                    },
+                                    "qOtherTotalSpec": {
+                                        "qOtherMode": "OTHER_OFF",
+                                        "qOtherCounted": {},
+                                        "qOtherLimit": {},
+                                        "qOtherLimitMode": "OTHER_GT_LIMIT",
+                                        "qForceBadValueKeeping": true,
+                                        "qApplyEvenWhenPossiblyWrongResult": true,
+                                        "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                        "qTotalMode": "TOTAL_OFF",
+                                        "qReferencedExpression": {}
+                                    },
+                                    "qMaxNumberPoints": -1,
+                                    "qAttributeExpressions": []
+                                }
+                            }
+                        ],
+                        "qInterColumnSortOrder": [
+                            0
+                        ],
+                        "qInitialDataFetch": [],
+                        "qReductionMode": "N",
+                        "qMode": "S",
+                        "qPseudoDimPos": -1,
+                        "qNoOfLeftDims": -1,
+                        "qMaxStackedCells": 5000,
+                        "qCalcCond": {},
+                        "qTitle": {},
+                        "qCalcCondition": {
+                            "qCond": {},
+                            "qMsg": {}
+                        },
+                        "qColumnOrder": [],
+                        "qExpansionState": [],
+                        "qDynamicScript": [],
+                        "qLayoutExclude": {
+                            "qHyperCubeDef": {
+                                "qDimensions": [],
+                                "qMeasures": [],
+                                "qInterColumnSortOrder": [],
+                                "qInitialDataFetch": [],
+                                "qReductionMode": "N",
+                                "qMode": "S",
+                                "qPseudoDimPos": -1,
+                                "qNoOfLeftDims": -1,
+                                "qMaxStackedCells": 5000,
+                                "qCalcCond": {},
+                                "qTitle": {},
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "qColumnOrder": [],
+                                "qExpansionState": [],
+                                "qDynamicScript": []
+                            }
+                        }
+                    },
+                    "showTitles": false,
+                    "title": "",
+                    "subtitle": "",
+                    "footnote": "",
+                    "disableNavMenu": false,
+                    "showDetails": false,
+                    "responsive": "text",
+                    "markdown": "#[Current Range:]({\"index\":-1,\"color\":\"#383837\"}) =[](HPAVnHJ)",
+                    "images": [],
+                    "background": {
+                        "isUsed": false,
+                        "size": "auto",
+                        "position": "topLeft",
+                        "url": {}
+                    },
+                    "visualization": "text-image"
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "Nrfnqp",
+                        "qType": "map"
+                    },
+                    "qExtendsId": "36d145c0-f87f-46eb-ba8f-8748913fc59a",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "WnsPf",
+                        "qType": "table"
+                    },
+                    "qExtendsId": "13308ecf-7775-4e8f-8e64-e3536c7b64c9",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "dPuJump",
+                        "qType": "action-button"
+                    },
+                    "qMetaDef": {},
+                    "actions": [
+                        {
+                            "actionLabel": "Clear Service Month",
+                            "actionType": "clearField",
+                            "bookmark": "",
+                            "field": "Service Month",
+                            "variable": "",
+                            "showSystemVariables": false,
+                            "softLock": false,
+                            "value": "",
+                            "partial": false,
+                            "automation": "",
+                            "automationPostData": false,
+                            "cId": "SbNHUwU"
+                        },
+                        {
+                            "actionLabel": "Select Flag",
+                            "actionType": "selectValues",
+                            "bookmark": "",
+                            "field": "Current_13_Flag",
+                            "variable": "",
+                            "showSystemVariables": false,
+                            "softLock": false,
+                            "value": "1",
+                            "partial": false,
+                            "automation": "",
+                            "automationPostData": false,
+                            "cId": "EWxRqFA"
+                        },
+                        {
+                            "actionLabel": "Select Latest 12 Months",
+                            "actionType": "selectPossible",
+                            "bookmark": "77b3c873-f7a8-43dd-8018-b4ccc6770efc",
+                            "field": "Service Month",
+                            "variable": "",
+                            "showSystemVariables": false,
+                            "softLock": false,
+                            "value": {
+                                "qStringExpression": {
+                                    "qExpr": "=concat(if(Current_13_Flag=1,chr(34)&[Service Month]&chr(34)),';')\r\n//=[Service Month]=if(Current_Full_Month_Flag=1,[Service Month])"
+                                }
+                            },
+                            "partial": false,
+                            "automation": "",
+                            "automationPostData": false,
+                            "cId": "LJdC"
+                        },
+                        {
+                            "actionLabel": "Unselect Flag",
+                            "actionType": "clearField",
+                            "bookmark": "",
+                            "field": "Current_13_Flag",
+                            "variable": "",
+                            "showSystemVariables": false,
+                            "softLock": false,
+                            "value": "",
+                            "partial": false,
+                            "automation": "",
+                            "automationPostData": false,
+                            "cId": "pumfL"
+                        }
+                    ],
+                    "navigation": {
+                        "action": "none",
+                        "appId": "",
+                        "sheet": "",
+                        "story": "",
+                        "websiteUrl": "",
+                        "sameWindow": false,
+                        "odagLink": ""
+                    },
+                    "useEnabledCondition": true,
+                    "enabledCondition": {
+                        "qValueExpression": {
+                            "qExpr": "=if(GetSelectedCount([Service Month])=13 and GetPossibleCount(Current_13_Flag)=1,0,1)"
+                        }
+                    },
+                    "showTitles": false,
+                    "title": "Last 12 months button",
+                    "subtitle": "",
+                    "footnote": "",
+                    "disableNavMenu": true,
+                    "showDetails": false,
+                    "showDetailsExpression": false,
+                    "style": {
+                        "label": "Latest 12 Months",
+                        "font": {
+                            "size": 0.93,
+                            "useColorExpression": false,
+                            "color": {
+                                "index": -1,
+                                "color": null
+                            },
+                            "colorExpression": "",
+                            "style": {
+                                "bold": false,
+                                "italic": false,
+                                "underline": false
+                            },
+                            "align": "center"
+                        },
+                        "background": {
+                            "useColorExpression": true,
+                            "color": {
+                                "index": -1,
+                                "color": null
+                            },
+                            "colorExpression": {
+                                "qStringExpression": {
+                                    "qExpr": "=if(GetSelectedCount([Service Month])=13 and GetPossibleCount(Current_13_Flag)=1,rgb(160,160,160),rgb(90,136,203))\r\n//=if(GetFieldSelections(Current_13_Flag),rgb(90,136,203),rgb(160,160,160))"
+                                }
+                            },
+                            "useImage": false,
+                            "size": "auto",
+                            "position": "centerCenter",
+                            "url": {
+                                "qStaticContentUrlDef": {}
+                            }
+                        },
+                        "border": {
+                            "useBorder": true,
+                            "radius": 0.24,
+                            "width": 0,
+                            "useColorExpression": false,
+                            "color": {
+                                "index": -1,
+                                "color": null
+                            },
+                            "colorExpression": ""
+                        },
+                        "icon": {
+                            "useIcon": true,
+                            "iconType": "calendar",
+                            "position": "left"
+                        }
+                    },
+                    "visualization": "action-button",
+                    "version": "1.18.1"
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "wpGCX",
+                        "qType": "Legend-Custom"
+                    },
+                    "qExtendsId": "c903ad36-d8e2-4e5c-a4f7-073f465f5199",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "TRwSe",
+                        "qType": "table"
+                    },
+                    "qExtendsId": "83c1f810-3366-40b8-8ec4-da499b40e148",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            }
+        ]
+    }
+]
