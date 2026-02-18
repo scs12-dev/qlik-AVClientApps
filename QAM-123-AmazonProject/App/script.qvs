@@ -1,0 +1,406 @@
+///$tab Main
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET MoneyThousandSep=',';
+SET MoneyDecimalSep='.';
+SET MoneyFormat='$#,##0.00;-$#,##0.00';
+SET TimeFormat='h:mm:ss TT';
+SET DateFormat='M/D/YYYY';
+SET TimestampFormat='M/D/YYYY h:mm:ss[.fff] TT';
+SET FirstWeekDay=6;
+SET BrokenWeeks=1;
+SET ReferenceDay=0;
+SET FirstMonthOfYear=1;
+SET CollationLocale='en-US';
+SET CreateSearchIndexOnReload=1;
+SET MonthNames='Jan;Feb;Mar;Apr;May;Jun;Jul;Aug;Sep;Oct;Nov;Dec';
+SET LongMonthNames='January;February;March;April;May;June;July;August;September;October;November;December';
+SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
+SET LongDayNames='Monday;Tuesday;Wednesday;Thursday;Friday;Saturday;Sunday';
+SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;-12:p;-15:f;-18:a;-21:z;-24:y';
+
+set hideprefix = '%';
+
+set v_FolderName = "12324"; //AMAZON
+set v_RA_QVD_Client_Connection = "lib://RAExtractions/$(v_FolderName)";
+set v_RA_QVD_Global_Connection = "lib://RAExtractions/Global";
+
+set v_Client_External_Data_Connection = "lib://ExternalDataConnection/$(v_FolderName)";
+set v_Global_Common_External_Data_Connection = "lib://ExternalDataConnection/Common";
+
+///$tab Security
+/***********************************************************************************************************************************************
+"User Security"
+NOTE****: Please make sure this section is the first section.
+***********************************************************************************************************************************************/
+section access;
+LOAD
+    "ACCESS",
+    "USERID",
+    upper(SECURITYROLE) as %SECURITYROLE
+FROM [$(v_RA_QVD_Client_Connection)\User_Security_Info.qvd]
+(qvd);
+section application;
+///$tab Calendar
+Calendar:
+LOAD
+    Service_Month_Id as %Service_Month_Id,
+    Service_Month as 'Service Month',
+    Year_Number as 'Year',
+    Month_Name as 'Month'
+FROM [$(v_RA_QVD_Global_Connection)\Date_Dim.qvd](qvd)
+where Service_Month >= AddMonths(Today(), -38) and Service_Month <= AddMonths(Today(), -2); 
+///$tab Rebate Info
+Rebate_Info:
+LOAD Distinct
+    %Client_Hier_Id,
+    //Savings_Unit,
+    //Savings_Factor,
+    "Bldg Type",
+    "Amazon_UDC or Agency",
+    "Program Category",
+    "Equipment Category",
+    "RIPS Program Data_UDC or Agency",
+    "Expiration Date",
+    "Program Name",
+    "Program Description",
+    "Program Weblink",
+    "Record Revision Date",
+    "Date Entry Last Reviewed",
+    "Special Notes",
+    "Lookback Period",
+    "Industry Type",
+    "Record Activity Indicator",
+    "Rebate Application",
+    If("Pre-Approval?" = 1, 'TRUE', 'FALSE') as [Pre-Approval?],
+    "Rebate Cap",
+    If( Electric = 1, 290, 
+    	If( Solar = 1, '',
+        	If( Gas = 1, 291,
+            	If( Water = 1, 67,
+                	If( Waste = 1, 100025, ''
+    ))))) as %Commodity_Id
+FROM [$(v_Client_External_Data_Connection)\Amazon_Rebate_Report.xlsx]
+(ooxml, embedded labels, table is [Amazon Combined]);
+left Join
+Load Distinct
+	[%Commodity_Id],
+    [%Client_Hier_Id],
+    [%Commodity_Id]&'|'&[%Client_Hier_Id] as %Service_Client
+Resident Rebate_Info;
+
+
+///$tab Services
+Services:
+NoConcatenate
+LOAD Distinct
+    Commodity_Id as %Commodity_Id,
+    Commodity_Name as 'Service'
+FROM [$(v_RA_QVD_Client_Connection)\Commodity_Bucket_Master.qvd](qvd)
+where exists([%Commodity_Id], Commodity_Id);
+
+///$tab Square Footage
+Square_Footage:
+LOAD Distinct
+    Client_Hier_Id as %Client_Hier_Id,
+    Round(Constant_Attribute_Value, 1)  as 'Square Footage'
+FROM [$(v_RA_QVD_Client_Connection)\Constant_Attribute_Data.qvd]
+(qvd) where Attribute_Name = 'Square Footage'
+and exists([%Client_Hier_Id], Client_Hier_Id);
+///$tab CostUsage
+TMP:  //TEMPORARY TABLE TO CALCULATE THE MOST COMMONLY ENTERED UOM FOR EACH SERVICE, WHICH WILL BECOME THE PREFERRED UOM
+LOAD Distinct  //CALCULATES COUNT OF BASE KEY IDS BY COMMODITY
+    Commodity_Id as %Commodity_Id,
+    Commodity_UOM_Base_Key_Id as %Commodity_UOM_Base_Key_Id,
+    Count(Commodity_UOM_Base_Key_Id) as %ID_Count
+FROM [$(v_RA_QVD_Client_Connection)\Bucket_Data.qvd](qvd)
+where (Bucket_Name = 'Total Usage' or Bucket_Name = 'Volume') and exists([%Service_Month_Id], Service_Month_Id) and exists([%Commodity_Id], Commodity_Id) and exists([%Client_Hier_Id], Client_Hier_Id)
+Group By Commodity_Id, Commodity_UOM_Base_Key_Id;
+Left Join
+Load  //SAVES THE MOST COMMON UOM FOR EACH COMMODITY AS A NEW FIELD (%NEW_UOM), THESE WILL BE "PREFERRED" UOMS
+    [%Commodity_Id],
+    FirstSortedValue([%Commodity_UOM_Base_Key_Id],-[%ID_Count]) as %NEW_UOM //
+Resident TMP
+Group By [%Commodity_Id];
+left Join
+LOAD Distinct  //ADDS THE UOM NAME FOR ONLY THE PREFERRED UOMS
+	Commodity_UOM_Base_Key_Id as %NEW_UOM,
+	MaxString(Target_Commodity_UOM_Name) as Target_UOM
+FROM [$(v_RA_QVD_Global_Connection)\Consumption_Unit_Conversion.qvd](qvd)
+where  Commodity_UOM_Conversion_Factor = 1 and exists(%NEW_UOM, Commodity_UOM_Base_Key_Id) Group By Commodity_UOM_Base_Key_Id ;
+
+UOM_MAP: //NEEDED FOR THE UOM_CONVERSION MAPPING TABLE
+MAPPING LOAD Distinct
+	Commodity_UOM_Base_Key_Id&Target_Commodity_UOM_Name,
+    Commodity_UOM_Conversion_Factor
+FROM [$(v_RA_QVD_Global_Connection)\Consumption_Unit_Conversion.qvd](qvd);
+
+UOM_Conversion:  //LOADS ALL BASE KEY IDS BUT ONLY CONVERSION FACTORS TO PREFERRED UOMS
+MAPPING Load Distinct
+	[%Commodity_UOM_Base_Key_Id],
+    ApplyMap('UOM_MAP', [%Commodity_UOM_Base_Key_Id]&Target_UOM, 0) as Conversion_Factor
+Resident TMP;
+
+Base_Lookup: //ALLOWS US TO LOOKUP THE CORRESPONDING KEY ID FOR OUR PREFERRED UOMS
+MAPPING LOAD Distinct
+	Target_UOM&%Commodity_Id,
+	%Commodity_UOM_Base_Key_Id
+Resident TMP;
+
+USD_Conversion:  //CONVERSION TO USD
+MAPPING LOAD Distinct
+    Currency_Unit_Base_Key_Id,
+    Currency_Conversion_Factor
+FROM [$(v_RA_QVD_Global_Connection)\Currency_Unit_Conversion.qvd](qvd)
+where Target_Currency_Name = 'USD';
+
+  
+Join(Services)  //ADDING THE PREFERRED UOM (TARGET_UOM) FOR EACH COMMODITY TO THE SERVICES TABLE FOR SIMPLICITY
+Load
+	[%Commodity_Id],
+	Target_UOM
+Resident TMP;    
+    
+Drop Table TMP;  //NO LONGER NEED THE TEMPORARY TABLE
+
+
+
+Bucket_Data:  //TIME TO LOAD IN SOME VOLUME
+LOAD Distinct
+    Client_Hier_Id as %Client_Hier_Id,
+    Commodity_Id as %Commodity_Id,
+    Service_Month_Id as %Service_Month_Id,
+// 	ApplyMap('Base_Lookup',
+//         Lookup('Target_UOM','%Commodity_Id',Commodity_Id,'Services')&Commodity_Id        
+//     ) as %Commodity_UOM_Base_Key_Id, 
+    ApplyMap('UOM_Conversion', Commodity_UOM_Base_Key_Id, 0) * Bucket_Value as Volume
+FROM [$(v_RA_QVD_Client_Connection)\Bucket_Data.qvd](qvd)
+where (Bucket_Name = 'Total Usage' or Bucket_Name = 'Volume') and exists([%Commodity_Id], Commodity_Id) and exists([%Service_Month_Id], Service_Month_Id) and exists([%Client_Hier_Id], Client_Hier_Id) and exists(%Service_Client, [Commodity_Id]&'|'&[Client_Hier_Id]);
+Join
+LOAD
+    Client_Hier_Id as %Client_Hier_Id,
+    Commodity_Id as %Commodity_Id,
+    Service_Month_Id as %Service_Month_Id,
+    ApplyMap('USD_Conversion', Currency_Unit_Base_Key_Id, 0) * Bucket_Value as Cost
+FROM [$(v_RA_QVD_Client_Connection)\Bucket_Data.qvd](qvd)
+where Bucket_Name = 'Total Cost' and exists([%Commodity_Id], Commodity_Id) and exists([%Service_Month_Id], Service_Month_Id) and exists([%Client_Hier_Id], Client_Hier_Id) and exists(%Service_Client, [Commodity_Id]&'|'&[Client_Hier_Id]);
+
+
+Volume_Outliers_Min:  //CALCULATING OUTLIERS
+Mapping Load
+	%Client_Hier_Id&%Commodity_Id,
+	Avg(Volume) - 3 * StDev(Volume)
+Resident Bucket_Data
+Group By %Client_Hier_Id&%Commodity_Id;
+    
+Volume_Outliers_Max:
+Mapping Load
+	%Client_Hier_Id&%Commodity_Id,
+	Avg(Volume) + 3 * StDev(Volume)
+Resident Bucket_Data
+Group By %Client_Hier_Id&%Commodity_Id;
+
+
+Join(Bucket_Data)  //ADDING OUTLIER FLAG BACK INTO THE DATA TABLE
+Load
+	%Client_Hier_Id,
+    %Commodity_Id,
+    %Service_Month_Id,
+    If(Volume < ApplyMap('Volume_Outliers_Min', %Client_Hier_Id&%Commodity_Id) or Volume > ApplyMap('Volume_Outliers_Max', %Client_Hier_Id&%Commodity_Id),
+        1,0
+    ) as Outlier
+Resident Bucket_Data;
+
+// "Cost Currency Conversion":
+// LOAD
+//     Target_Currency_Name as 'Currency Name',
+//     Currency_Conversion_Factor as 'Currency Factor'
+// FROM [$(v_RA_QVD_Global_Connection)\Currency_Unit_Conversion.qvd](qvd)
+// where Currency_Unit_Base_Key_Id = 2973;
+
+// "Volume Conversion":
+// LOAD
+//     Commodity_UOM_Base_Key_Id as %Commodity_UOM_Base_Key_Id,
+//     Target_Commodity_UOM_Name as 'Volume UOM', 
+//     Commodity_UOM_Conversion_Factor as 'Volume Factor'
+// FROM [$(v_RA_QVD_Global_Connection)\Consumption_Unit_Conversion.qvd](qvd)
+// where exists([%Commodity_UOM_Base_Key_Id], Commodity_UOM_Base_Key_Id) and Commodity_UOM_Conversion_Factor > 0;
+// Concatenate("Volume Conversion")
+// LOAD Distinct
+// 	%Commodity_UOM_Base_Key_Id,
+//     'No Selection' as 'Volume UOM',
+//     1 as 'Volume Factor'
+// Resident "Volume Conversion";
+
+
+Bucket_Data_2:  //ADDING YEAR AND MONTH BUT REMOVING OUTLIER ROWS
+NoConcatenate
+Load
+	*,
+    Lookup('Year', '%Service_Month_Id', %Service_Month_Id, 'Calendar') as Year,
+    Lookup('Month', '%Service_Month_Id', %Service_Month_Id, 'Calendar') as Month
+Resident Bucket_Data
+where Outlier = 0;
+
+Drop Table Bucket_Data;
+
+Bucket_Data_3:  //KEEPING ONLY THE COST AND VOLUME FROM THE MAX YEAR FOR EACH MONTH, SERVICE, AND SITE
+NoConcatenate
+Load
+	%Client_Hier_Id,
+	[%Commodity_Id],
+    Month,
+    FirstSortedValue(Cost, -Year) as Cost,
+    FirstSortedValue(Volume, -Year) as Volume
+Resident Bucket_Data_2 
+where not IsNull(Month)
+Group By [%Client_Hier_Id], [%Commodity_Id], Month;
+
+Drop Table Bucket_Data_2;
+
+Bucket_Data_4:  //NOW ADDING THOSE VALUES UP TO GET A FULL 12 MONTH TERM
+NoConcatenate
+Load Distinct
+	%Client_Hier_Id,
+	[%Commodity_Id],
+    Sum(Cost) as Cost,
+    Count(Cost) as Cost_Count,
+    Sum(Volume) as Volume,
+    Count(Volume) as Volume_Count
+Resident Bucket_Data_3
+Group By [%Client_Hier_Id], [%Commodity_Id];
+
+Drop Table Bucket_Data_3;
+
+Bucket_Data_5:  //AND FINALLY SCALING UP TO A FULL 12 MONTHS FOR SITES THAT DON'T HAVE 12 HISTORICALLY
+NoConcatenate
+Load Distinct
+	%Client_Hier_Id,
+	[%Commodity_Id],
+	Cost*12/Cost_Count as Cost,
+    Volume*12/Volume_Count as Volume
+Resident Bucket_Data_4;
+left Join
+Load Distinct
+	[%Commodity_Id],
+    [%Client_Hier_Id],
+    [%Commodity_Id]&'|'&[%Client_Hier_Id] as %Service_Client
+Resident Bucket_Data_5;
+
+Drop Tables Bucket_Data_4, Calendar;
+    
+    
+    
+Services2:
+NoConcatenate
+Load 
+	[%Commodity_Id],
+	Service,
+    Target_UOM,
+    Service & ' (' & Target_UOM & ')' as %Service
+Resident Services;
+
+Drop Table Services;
+
+  
+///$tab Client Hier
+"Security Site":
+LOAD
+    upper(Security_Role_Id) as %SECURITYROLE,
+    Client_Hier_Id as %Client_Hier_Id,
+    Site_Name as 'Site',
+	Sitegroup_Name as 'Division',
+    Site_Address_Line1 as 'Address',
+    City as 'City',
+    State_Name as %StateID,
+    Left(State_Name, 2) as State,
+    Country_Name as 'Country',
+    Geo_Lat as %Geo_Lat,
+    Geo_Long as %Geo_Long,
+    GeoMakePoint(Geo_Lat, Geo_Long) as Location
+FROM [$(v_RA_QVD_Client_Connection)\SiteGroup_Site_Security_Role_Client_Hier.qvd](qvd)
+where exists([%Client_Hier_Id], Client_Hier_Id) and Sitegroup_Type_Name = 'Division' and Site_Not_Managed = 0;
+
+Site_Links:
+NoConcatenate
+Load Distinct
+	[%Client_Hier_Id],
+    %Geo_Lat as Site_Lat,
+    %Geo_Long as Site_Long
+Resident "Security Site";
+Join
+Load Distinct
+    City & ', ' & State as [Analysis Area],
+    State as [Analysis State],
+    MaxString(Location) as Link_Location,
+    MaxString(%Geo_Lat) as Link_Lat,
+    MaxString(%Geo_Long) as Link_Long
+Resident "Security Site" Group By (City & ', ' & State), State;
+
+
+Join (Site_Links)
+Load
+	%Client_Hier_Id,
+    [Analysis Area],
+        Round((2 * 
+            (atan2(
+                sqrt((sqr(sin(((Link_Lat*Pi()/180)-(Site_Lat*Pi()/180))/2))
+                + ((cos((Site_Lat*Pi()/180))*cos((Link_Lat*Pi()/180)))
+                *sqr(sin(((Link_Long*Pi()/180)-(Site_Long*Pi()/180))/2))
+                )
+            )),
+            sqrt((1-(
+                sqr(sin(((Link_Lat*Pi()/180)-(Site_Lat*Pi()/180))/2))
+                + ((cos((Site_Lat*Pi()/180))*cos((Link_Lat*Pi()/180)))
+                * sqr(sin(((Link_Long*Pi()/180)-(Site_Long*Pi()/180))/2))
+                )
+            ))
+        )))) * 3959, 1)as Distance_btw_Sites
+Resident Site_Links;
+
+Drop Fields Site_Lat, Site_Long from Site_Links;
+
+Join(Site_Links)
+Load
+	%Client_Hier_Id,
+    [Analysis Area],
+	If(Distance_btw_Sites<=10, '10 miles',
+        If(Distance_btw_Sites<=25, '25 miles',
+            If(Distance_btw_Sites<=50, '50 miles',
+                If(Distance_btw_Sites<=100, '100 miles', 'NA'
+    )))) as [Search Radius]
+Resident Site_Links;
+
+Site_Links2:
+NoConcatenate
+Load Distinct
+	[%Client_Hier_Id],
+    [Analysis Area],
+    [Analysis State],
+    Link_Location,
+    Distance_btw_Sites,
+	[Search Radius],
+    Link_Lat,
+    Link_Long
+Resident Site_Links where Distance_btw_Sites <= 100;
+
+Drop Table Site_Links;
+///$tab Clean Up
+FactTable:
+Load Distinct
+	[%Commodity_Id]
+Resident Services2;
+Join
+Load Distinct 
+	[%Client_Hier_Id]
+Resident Rebate_Info;
+left Join
+Load Distinct
+	[%Commodity_Id],
+    [%Client_Hier_Id],
+    [%Commodity_Id]&'|'&[%Client_Hier_Id] as %Service_Client
+Resident FactTable;
+
+
+Drop Field [%Commodity_Id], [%Client_Hier_Id] from Rebate_Info;
+Drop Field [%Commodity_Id], [%Client_Hier_Id] from Bucket_Data_5;
