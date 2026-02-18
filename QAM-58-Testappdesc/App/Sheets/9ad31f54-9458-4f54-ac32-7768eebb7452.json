@@ -1,0 +1,2356 @@
+[
+    {
+        "qProperty": {
+            "qInfo": {
+                "qId": "9ad31f54-9458-4f54-ac32-7768eebb7452",
+                "qType": "sheet"
+            },
+            "qMetaDef": {
+                "title": "Collection Overview",
+                "description": ""
+            },
+            "rank": 7.5,
+            "thumbnail": {
+                "qStaticContentUrlDef": {
+                    "qUrl": "/appcontent/12a37d50-ec71-4a8c-b7b7-1ba8375d7154/IC Collection Overview_thumbnail.png"
+                }
+            },
+            "columns": 24,
+            "rows": 12,
+            "cells": [
+                {
+                    "name": "bf651476-a147-4d71-b591-b2780e499d1d",
+                    "type": "VizlibTable",
+                    "col": 0,
+                    "row": 5,
+                    "colspan": 24,
+                    "rowspan": 7
+                },
+                {
+                    "name": "481c505f-58a9-4149-8eef-b212f0fb29ea",
+                    "type": "swr-sense-navigation",
+                    "col": 0,
+                    "row": 0,
+                    "colspan": 1,
+                    "rowspan": 1
+                },
+                {
+                    "name": "f8f8a622-a431-4a3c-94f1-251a94161bc0",
+                    "type": "filterpane",
+                    "col": 1,
+                    "row": 0,
+                    "colspan": 23,
+                    "rowspan": 1
+                },
+                {
+                    "name": "c6991e1b-bb74-4175-af4c-56899bb9f771",
+                    "type": "filterpane",
+                    "col": 0,
+                    "row": 1,
+                    "colspan": 21,
+                    "rowspan": 1
+                },
+                {
+                    "name": "90f8b1a2-6516-4710-b44e-fcbcb1bf5376",
+                    "type": "swr-sense-navigation",
+                    "col": 21,
+                    "row": 1,
+                    "colspan": 3,
+                    "rowspan": 1
+                },
+                {
+                    "name": "e0108f1d-0730-4af0-9559-e9af5b0ace33",
+                    "type": "barchart",
+                    "col": 0,
+                    "row": 2,
+                    "colspan": 20,
+                    "rowspan": 3
+                },
+                {
+                    "name": "76cf1244-68c6-4f7b-959d-af43f0bba2d0",
+                    "type": "table",
+                    "col": 20,
+                    "row": 2,
+                    "colspan": 4,
+                    "rowspan": 3
+                }
+            ]
+        },
+        "qChildren": [
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "90f8b1a2-6516-4710-b44e-fcbcb1bf5376",
+                        "qType": "swr-sense-navigation"
+                    },
+                    "qMetaDef": {},
+                    "showTitles": false,
+                    "title": "",
+                    "subtitle": "",
+                    "footnote": "",
+                    "showDetails": false,
+                    "props": {
+                        "buttonLabel": "Collection Details >>",
+                        "buttonStyle": "link",
+                        "fullWidth": true,
+                        "buttonAlign": "center",
+                        "isButtonMultiLine": false,
+                        "buttonIcon": "",
+                        "action": "gotoSheet",
+                        "sheetId": "",
+                        "selectedSheet": "068aeabb-293d-4e1c-a849-2fa4e47b2183",
+                        "selectedStory": "",
+                        "websiteUrl": "",
+                        "isActionsBefore": false,
+                        "actionBefore1": "none",
+                        "field1": "",
+                        "variable1": "",
+                        "value1": "",
+                        "value1Desc": null,
+                        "bookmark1": "",
+                        "softlock1": false,
+                        "actionBefore2": "none",
+                        "field2": "",
+                        "variable2": "",
+                        "value2": "",
+                        "value2Desc": "",
+                        "bookmark2": "",
+                        "softlock2": false
+                    },
+                    "visualization": "swr-sense-navigation",
+                    "version": "0.8.1",
+                    "extensionMeta": {
+                        "name": "Sheet Navigation & Actions",
+                        "description": "Sense Sheet Navigation + Actions visualization extension for Qlik Sense.",
+                        "icon": "extension",
+                        "type": "visualization",
+                        "version": "0.8.1",
+                        "preview": "swr-sense-navigation.png",
+                        "author": "Stefan Walther",
+                        "license": "MIT",
+                        "homepage": "http://github.com/stefanwalther/sense-navigation",
+                        "keywords": "qlik-sense, visualization",
+                        "repository": "https://github.com/stefanwalther/sense-navigation",
+                        "dependencies": {
+                            "qlik-sense": ">=2.1.1"
+                        },
+                        "previewIconURL": "../extensions/swr-sense-navigation/swr-sense-navigation.png",
+                        "template": "swr-sense-navigation",
+                        "isLibraryItem": true,
+                        "isThirdParty": true,
+                        "templateIconClassName": "icon-extension"
+                    }
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "bf651476-a147-4d71-b591-b2780e499d1d",
+                        "qType": "table"
+                    },
+                    "qMetaDef": {},
+                    "qHyperCubeDef": {
+                        "qDimensions": [
+                            {
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [
+                                        "Division"
+                                    ],
+                                    "qFieldLabels": [
+                                        ""
+                                    ],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": true,
+                                    "cId": "XsxmuKJ",
+                                    "othersLabel": "Others",
+                                    "textAlign": {
+                                        "auto": true,
+                                        "align": "left"
+                                    },
+                                    "representation": {
+                                        "type": "text",
+                                        "urlLabel": ""
+                                    }
+                                },
+                                "qNullSuppression": true,
+                                "qOtherTotalSpec": {
+                                    "qOtherMode": "OTHER_OFF",
+                                    "qOtherCounted": {
+                                        "qv": "10"
+                                    },
+                                    "qOtherLimit": {
+                                        "qv": "0"
+                                    },
+                                    "qOtherLimitMode": "OTHER_GE_LIMIT",
+                                    "qForceBadValueKeeping": true,
+                                    "qApplyEvenWhenPossiblyWrongResult": true,
+                                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                    "qTotalMode": "TOTAL_OFF",
+                                    "qReferencedExpression": {}
+                                },
+                                "qOtherLabel": {
+                                    "qv": "Others"
+                                },
+                                "qTotalLabel": {},
+                                "qCalcCond": {},
+                                "qAttributeExpressions": [],
+                                "qAttributeDimensions": [],
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                }
+                            },
+                            {
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [
+                                        "Country"
+                                    ],
+                                    "qFieldLabels": [
+                                        ""
+                                    ],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": true,
+                                    "cId": "FjEnc",
+                                    "othersLabel": "Others",
+                                    "labelExpression": "",
+                                    "showIcons": false,
+                                    "icon": "",
+                                    "iconColor": "#000000",
+                                    "iconPosition": 0,
+                                    "titleTextAlignment": "left",
+                                    "adjustColumnWidth": false,
+                                    "columnWidth": 200,
+                                    "fontStyle": "",
+                                    "dropshadow": false,
+                                    "textAlignment": "left",
+                                    "showBorder": true,
+                                    "iconColorPicker": {
+                                        "color": "#000000",
+                                        "index": -1
+                                    },
+                                    "textColorPicker": {
+                                        "color": "#595959",
+                                        "index": -1
+                                    },
+                                    "backgroundColorPicker": {
+                                        "color": "#FFFFFF",
+                                        "index": -1
+                                    }
+                                },
+                                "qOtherTotalSpec": {
+                                    "qOtherMode": "OTHER_OFF",
+                                    "qOtherCounted": {
+                                        "qv": "10"
+                                    },
+                                    "qOtherLimit": {
+                                        "qv": "0"
+                                    },
+                                    "qOtherLimitMode": "OTHER_GE_LIMIT",
+                                    "qForceBadValueKeeping": true,
+                                    "qApplyEvenWhenPossiblyWrongResult": true,
+                                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                    "qTotalMode": "TOTAL_OFF",
+                                    "qReferencedExpression": {}
+                                },
+                                "qOtherLabel": {
+                                    "qv": "Others"
+                                },
+                                "qTotalLabel": {},
+                                "qCalcCond": {},
+                                "qAttributeExpressions": [
+                                    {
+                                        "qNumFormat": {
+                                            "qType": "U",
+                                            "qnDec": 10,
+                                            "qUseThou": 0
+                                        }
+                                    },
+                                    {
+                                        "qNumFormat": {
+                                            "qType": "U",
+                                            "qnDec": 10,
+                                            "qUseThou": 0
+                                        }
+                                    }
+                                ],
+                                "qAttributeDimensions": [],
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "othersLabel": "Others"
+                            },
+                            {
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [
+                                        "Site"
+                                    ],
+                                    "qFieldLabels": [
+                                        ""
+                                    ],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": true,
+                                    "cId": "uRCkb",
+                                    "othersLabel": "Others",
+                                    "labelExpression": "",
+                                    "showIcons": false,
+                                    "icon": "",
+                                    "iconColor": "#000000",
+                                    "iconPosition": 0,
+                                    "titleTextAlignment": "center",
+                                    "fontStyle": "",
+                                    "dropshadow": false,
+                                    "textAlignment": "left",
+                                    "showBorder": true,
+                                    "iconColorPicker": {
+                                        "color": "#000000",
+                                        "index": -1
+                                    },
+                                    "textColorPicker": {
+                                        "color": "#595959",
+                                        "index": -1
+                                    },
+                                    "backgroundColorPicker": {
+                                        "color": "#FFFFFF",
+                                        "index": -1
+                                    },
+                                    "columnWidth": 200
+                                },
+                                "qOtherTotalSpec": {
+                                    "qOtherMode": "OTHER_OFF",
+                                    "qOtherCounted": {
+                                        "qv": "10"
+                                    },
+                                    "qOtherLimit": {
+                                        "qv": "0"
+                                    },
+                                    "qOtherLimitMode": "OTHER_GE_LIMIT",
+                                    "qForceBadValueKeeping": true,
+                                    "qApplyEvenWhenPossiblyWrongResult": true,
+                                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                    "qTotalMode": "TOTAL_OFF",
+                                    "qReferencedExpression": {}
+                                },
+                                "qOtherLabel": {
+                                    "qv": "Others"
+                                },
+                                "qTotalLabel": {},
+                                "qCalcCond": {},
+                                "qAttributeExpressions": [
+                                    {
+                                        "qNumFormat": {
+                                            "qType": "U",
+                                            "qnDec": 10,
+                                            "qUseThou": 0
+                                        }
+                                    },
+                                    {
+                                        "qNumFormat": {
+                                            "qType": "U",
+                                            "qnDec": 10,
+                                            "qUseThou": 0
+                                        }
+                                    }
+                                ],
+                                "qAttributeDimensions": [],
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "othersLabel": "Others"
+                            },
+                            {
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [
+                                        "=Account_Service_All"
+                                    ],
+                                    "qFieldLabels": [
+                                        "Service"
+                                    ],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": true,
+                                    "cId": "nKqgQL",
+                                    "othersLabel": "Others",
+                                    "labelExpression": "",
+                                    "showIcons": false,
+                                    "icon": "",
+                                    "iconColor": "#000000",
+                                    "iconPosition": 0,
+                                    "titleTextAlignment": "left",
+                                    "adjustColumnWidth": true,
+                                    "columnWidth": 200,
+                                    "fontStyle": "",
+                                    "dropshadow": false,
+                                    "textAlignment": "left",
+                                    "showBorder": true,
+                                    "iconColorPicker": {
+                                        "color": "#000000",
+                                        "index": -1
+                                    },
+                                    "textColorPicker": {
+                                        "color": "#595959",
+                                        "index": -1
+                                    },
+                                    "backgroundColorPicker": {
+                                        "color": "#FFFFFF",
+                                        "index": -1
+                                    },
+                                    "representation": {
+                                        "type": "text"
+                                    }
+                                },
+                                "qOtherTotalSpec": {
+                                    "qOtherMode": "OTHER_OFF",
+                                    "qOtherCounted": {
+                                        "qv": "10"
+                                    },
+                                    "qOtherLimit": {
+                                        "qv": "0"
+                                    },
+                                    "qOtherLimitMode": "OTHER_GE_LIMIT",
+                                    "qForceBadValueKeeping": true,
+                                    "qApplyEvenWhenPossiblyWrongResult": true,
+                                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                    "qTotalMode": "TOTAL_OFF",
+                                    "qReferencedExpression": {}
+                                },
+                                "qOtherLabel": {
+                                    "qv": "Others"
+                                },
+                                "qTotalLabel": {},
+                                "qCalcCond": {},
+                                "qAttributeExpressions": [],
+                                "qAttributeDimensions": [],
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "othersLabel": "Others"
+                            },
+                            {
+                                "qLibraryId": "RZjunj",
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [],
+                                    "qFieldLabels": [],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": true,
+                                    "cId": "uqzTHUk",
+                                    "othersLabel": "Others",
+                                    "labelExpression": "Vendor",
+                                    "showIcons": false,
+                                    "icon": "",
+                                    "iconColor": "#000000",
+                                    "iconPosition": 0,
+                                    "titleTextAlignment": "left",
+                                    "adjustColumnWidth": false,
+                                    "columnWidth": 200,
+                                    "fontStyle": "",
+                                    "dropshadow": false,
+                                    "textAlignment": "left",
+                                    "showBorder": true,
+                                    "iconColorPicker": {
+                                        "color": "#000000",
+                                        "index": -1
+                                    },
+                                    "textColorPicker": {
+                                        "color": "#595959",
+                                        "index": -1
+                                    },
+                                    "backgroundColorPicker": {
+                                        "color": "#FFFFFF",
+                                        "index": -1
+                                    },
+                                    "representation": {
+                                        "type": "text"
+                                    }
+                                },
+                                "qOtherTotalSpec": {
+                                    "qOtherMode": "OTHER_OFF",
+                                    "qOtherCounted": {
+                                        "qv": "10"
+                                    },
+                                    "qOtherLimit": {
+                                        "qv": "0"
+                                    },
+                                    "qOtherLimitMode": "OTHER_GE_LIMIT",
+                                    "qForceBadValueKeeping": true,
+                                    "qApplyEvenWhenPossiblyWrongResult": true,
+                                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                    "qTotalMode": "TOTAL_OFF",
+                                    "qReferencedExpression": {}
+                                },
+                                "qOtherLabel": {
+                                    "qv": "Others"
+                                },
+                                "qTotalLabel": {},
+                                "qCalcCond": {},
+                                "qAttributeExpressions": [],
+                                "qAttributeDimensions": [],
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "title": "Vendor (CB)",
+                                "othersLabel": "Others"
+                            },
+                            {
+                                "qLibraryId": "NpSmJu",
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [],
+                                    "qFieldLabels": [],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": -1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": true,
+                                    "cId": "zHTUa",
+                                    "othersLabel": "Others",
+                                    "labelExpression": "",
+                                    "showIcons": false,
+                                    "icon": "",
+                                    "iconColor": "#000000",
+                                    "iconPosition": 0,
+                                    "titleTextAlignment": "center",
+                                    "fontStyle": "",
+                                    "dropshadow": false,
+                                    "textAlignment": "left",
+                                    "showBorder": true,
+                                    "iconColorPicker": {
+                                        "color": "#000000",
+                                        "index": -1
+                                    },
+                                    "textColorPicker": {
+                                        "color": "#595959",
+                                        "index": -1
+                                    },
+                                    "backgroundColorPicker": {
+                                        "color": "#FFFFFF",
+                                        "index": -1
+                                    },
+                                    "columnWidth": 200,
+                                    "representation": {
+                                        "type": "text"
+                                    },
+                                    "textAlign": {
+                                        "auto": false
+                                    }
+                                },
+                                "qOtherTotalSpec": {
+                                    "qOtherMode": "OTHER_OFF",
+                                    "qOtherCounted": {
+                                        "qv": "10"
+                                    },
+                                    "qOtherLimit": {
+                                        "qv": "0"
+                                    },
+                                    "qOtherLimitMode": "OTHER_GE_LIMIT",
+                                    "qForceBadValueKeeping": true,
+                                    "qApplyEvenWhenPossiblyWrongResult": true,
+                                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                    "qTotalMode": "TOTAL_OFF",
+                                    "qReferencedExpression": {}
+                                },
+                                "qOtherLabel": {
+                                    "qv": "Others"
+                                },
+                                "qTotalLabel": {},
+                                "qCalcCond": {},
+                                "qAttributeExpressions": [],
+                                "qAttributeDimensions": [],
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "title": "Account Number",
+                                "othersLabel": "Others"
+                            },
+                            {
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [
+                                        "Invoice_Collection_Alternative_Account_Number"
+                                    ],
+                                    "qFieldLabels": [
+                                        "Alternate Account Number"
+                                    ],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": true,
+                                    "cId": "pNRWu",
+                                    "othersLabel": "Others",
+                                    "labelExpression": "",
+                                    "showIcons": false,
+                                    "icon": "",
+                                    "iconColor": "#000000",
+                                    "iconPosition": 0,
+                                    "titleTextAlignment": "center",
+                                    "fontStyle": "",
+                                    "dropshadow": false,
+                                    "textAlignment": "left",
+                                    "showBorder": true,
+                                    "iconColorPicker": {
+                                        "color": "#000000",
+                                        "index": -1
+                                    },
+                                    "textColorPicker": {
+                                        "color": "#595959",
+                                        "index": -1
+                                    },
+                                    "backgroundColorPicker": {
+                                        "color": "#FFFFFF",
+                                        "index": -1
+                                    },
+                                    "columnWidth": 200,
+                                    "representation": {
+                                        "type": "text"
+                                    },
+                                    "textAlign": {
+                                        "auto": false
+                                    }
+                                },
+                                "qOtherTotalSpec": {
+                                    "qOtherMode": "OTHER_OFF",
+                                    "qOtherCounted": {
+                                        "qv": "10"
+                                    },
+                                    "qOtherLimit": {
+                                        "qv": "0"
+                                    },
+                                    "qOtherLimitMode": "OTHER_GE_LIMIT",
+                                    "qForceBadValueKeeping": true,
+                                    "qApplyEvenWhenPossiblyWrongResult": true,
+                                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                    "qTotalMode": "TOTAL_OFF",
+                                    "qReferencedExpression": {}
+                                },
+                                "qOtherLabel": {
+                                    "qv": "Others"
+                                },
+                                "qTotalLabel": {},
+                                "qCalcCond": {},
+                                "qAttributeExpressions": [],
+                                "qAttributeDimensions": [],
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "othersLabel": "Others"
+                            },
+                            {
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [
+                                        "Invoice_Collection_Primary_Source_Label"
+                                    ],
+                                    "qFieldLabels": [
+                                        "Invoice Source"
+                                    ],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": true,
+                                    "cId": "xTdbaw",
+                                    "othersLabel": "Others",
+                                    "labelExpression": "",
+                                    "showIcons": false,
+                                    "icon": "",
+                                    "iconColor": "#000000",
+                                    "iconPosition": 0,
+                                    "titleTextAlignment": "center",
+                                    "fontStyle": "",
+                                    "dropshadow": false,
+                                    "textAlignment": "left",
+                                    "showBorder": true,
+                                    "iconColorPicker": {
+                                        "color": "#000000",
+                                        "index": -1
+                                    },
+                                    "textColorPicker": {
+                                        "color": "#595959",
+                                        "index": -1
+                                    },
+                                    "backgroundColorPicker": {
+                                        "color": "#FFFFFF",
+                                        "index": -1
+                                    },
+                                    "columnWidth": 97,
+                                    "adjustColumnWidth": true,
+                                    "representation": {
+                                        "type": "text"
+                                    }
+                                },
+                                "qOtherTotalSpec": {
+                                    "qOtherMode": "OTHER_OFF",
+                                    "qOtherCounted": {
+                                        "qv": "10"
+                                    },
+                                    "qOtherLimit": {
+                                        "qv": "0"
+                                    },
+                                    "qOtherLimitMode": "OTHER_GE_LIMIT",
+                                    "qForceBadValueKeeping": true,
+                                    "qApplyEvenWhenPossiblyWrongResult": true,
+                                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                    "qTotalMode": "TOTAL_OFF",
+                                    "qReferencedExpression": {}
+                                },
+                                "qOtherLabel": {
+                                    "qv": "Others"
+                                },
+                                "qTotalLabel": {},
+                                "qCalcCond": {},
+                                "qAttributeExpressions": [],
+                                "qAttributeDimensions": [],
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "othersLabel": "Others"
+                            },
+                            {
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [
+                                        "=Billing_Cycle"
+                                    ],
+                                    "qFieldLabels": [
+                                        "Billing Cycle"
+                                    ],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": true,
+                                    "cId": "aTJBPyr",
+                                    "othersLabel": "Others",
+                                    "labelExpression": "",
+                                    "showIcons": false,
+                                    "icon": "",
+                                    "iconColor": "#000000",
+                                    "iconPosition": 0,
+                                    "titleTextAlignment": "center",
+                                    "fontStyle": "",
+                                    "dropshadow": false,
+                                    "textAlignment": "left",
+                                    "showBorder": true,
+                                    "iconColorPicker": {
+                                        "color": "#000000",
+                                        "index": -1
+                                    },
+                                    "textColorPicker": {
+                                        "color": "#595959",
+                                        "index": -1
+                                    },
+                                    "backgroundColorPicker": {
+                                        "color": "#FFFFFF",
+                                        "index": -1
+                                    },
+                                    "columnWidth": 118,
+                                    "adjustColumnWidth": true,
+                                    "representation": {
+                                        "type": "text"
+                                    }
+                                },
+                                "qOtherTotalSpec": {
+                                    "qOtherMode": "OTHER_OFF",
+                                    "qOtherCounted": {
+                                        "qv": "10"
+                                    },
+                                    "qOtherLimit": {
+                                        "qv": "0"
+                                    },
+                                    "qOtherLimitMode": "OTHER_GE_LIMIT",
+                                    "qForceBadValueKeeping": true,
+                                    "qApplyEvenWhenPossiblyWrongResult": true,
+                                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                    "qTotalMode": "TOTAL_OFF",
+                                    "qReferencedExpression": {}
+                                },
+                                "qOtherLabel": {
+                                    "qv": "Others"
+                                },
+                                "qTotalLabel": {},
+                                "qCalcCond": {},
+                                "qAttributeExpressions": [],
+                                "qAttributeDimensions": [],
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "othersLabel": "Others"
+                            }
+                        ],
+                        "qMeasures": [
+                            {
+                                "qLibraryId": "DdLvJxj",
+                                "qDef": {
+                                    "qTags": [],
+                                    "qGrouping": "N",
+                                    "qNumFormat": {
+                                        "qType": "U",
+                                        "qnDec": 10,
+                                        "qUseThou": 0
+                                    },
+                                    "qAggrFunc": "Expr",
+                                    "qAccumulate": 0,
+                                    "qActiveExpression": 0,
+                                    "qExpressions": [],
+                                    "autoSort": true,
+                                    "cId": "KPxjvKN",
+                                    "numFormatFromTemplate": true,
+                                    "textAlign": {
+                                        "auto": true,
+                                        "align": "left"
+                                    }
+                                },
+                                "qSortBy": {
+                                    "qSortByNumeric": -1,
+                                    "qSortByLoadOrder": 1,
+                                    "qExpression": {}
+                                },
+                                "qAttributeExpressions": [
+                                    {
+                                        "qExpression": "$(v_ColorMix_SE_Dark_Blue)",
+                                        "qNumFormat": {
+                                            "qType": "U",
+                                            "qnDec": 10,
+                                            "qUseThou": 0
+                                        },
+                                        "id": "cellBackgroundColor"
+                                    }
+                                ],
+                                "qAttributeDimensions": [],
+                                "qCalcCond": {},
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "qTrendLines": [],
+                                "qMiniChartDef": {
+                                    "qSortBy": {
+                                        "qExpression": {}
+                                    },
+                                    "qOtherTotalSpec": {
+                                        "qOtherMode": "OTHER_OFF",
+                                        "qOtherCounted": {},
+                                        "qOtherLimit": {},
+                                        "qOtherLimitMode": "OTHER_GT_LIMIT",
+                                        "qForceBadValueKeeping": true,
+                                        "qApplyEvenWhenPossiblyWrongResult": true,
+                                        "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                        "qTotalMode": "TOTAL_OFF",
+                                        "qReferencedExpression": {}
+                                    },
+                                    "qMaxNumberPoints": -1,
+                                    "qAttributeExpressions": []
+                                }
+                            },
+                            {
+                                "qDef": {
+                                    "qLabel": "Open Issues",
+                                    "qTags": [],
+                                    "qGrouping": "N",
+                                    "qDef": "count(distinct {$<Issue_Status = {\"Open\"}>} [Issue Id])",
+                                    "qNumFormat": {
+                                        "qType": "U",
+                                        "qnDec": 10,
+                                        "qUseThou": 0
+                                    },
+                                    "qAggrFunc": "Expr",
+                                    "qAccumulate": 0,
+                                    "qActiveExpression": 0,
+                                    "qExpressions": [],
+                                    "autoSort": true,
+                                    "cId": "Vybmf",
+                                    "numFormatFromTemplate": true,
+                                    "textAlign": {
+                                        "auto": true,
+                                        "align": "left"
+                                    }
+                                },
+                                "qSortBy": {
+                                    "qSortByNumeric": -1,
+                                    "qSortByLoadOrder": 1,
+                                    "qExpression": {}
+                                },
+                                "qAttributeExpressions": [],
+                                "qAttributeDimensions": [],
+                                "qCalcCond": {},
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "qTrendLines": [],
+                                "qMiniChartDef": {
+                                    "qSortBy": {
+                                        "qExpression": {}
+                                    },
+                                    "qOtherTotalSpec": {
+                                        "qOtherMode": "OTHER_OFF",
+                                        "qOtherCounted": {},
+                                        "qOtherLimit": {},
+                                        "qOtherLimitMode": "OTHER_GT_LIMIT",
+                                        "qForceBadValueKeeping": true,
+                                        "qApplyEvenWhenPossiblyWrongResult": true,
+                                        "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                        "qTotalMode": "TOTAL_OFF",
+                                        "qReferencedExpression": {}
+                                    },
+                                    "qMaxNumberPoints": -1,
+                                    "qAttributeExpressions": []
+                                }
+                            },
+                            {
+                                "qDef": {
+                                    "qLabel": "Invoices Affected",
+                                    "qTags": [],
+                                    "qGrouping": "N",
+                                    "qDef": "count(distinct {$<Issue_Status = {\"Open\"}>} [IC Issue Id])",
+                                    "qNumFormat": {
+                                        "qType": "U",
+                                        "qnDec": 10,
+                                        "qUseThou": 0
+                                    },
+                                    "qAccumulate": 0,
+                                    "qActiveExpression": 0,
+                                    "qExpressions": [],
+                                    "autoSort": true,
+                                    "cId": "csjJra",
+                                    "numFormatFromTemplate": true,
+                                    "showMeasure": false,
+                                    "qShowHide": "",
+                                    "labelExpression": "",
+                                    "showIcons": false,
+                                    "icon": "",
+                                    "iconColor": "#000000",
+                                    "iconPosition": 0,
+                                    "titleTextAlignment": "right",
+                                    "fontStyle": "",
+                                    "dropshadow": false,
+                                    "textAlignment": "right",
+                                    "cellRepresentation": "progressbar",
+                                    "useURL": false,
+                                    "progressMaxIsDynamic": true,
+                                    "progressMaxFixedValue": 100,
+                                    "progressBarColor": "#657dbb",
+                                    "progressBarUseRemainingColor": false,
+                                    "progressBarRemainingColor": "#000000",
+                                    "progressBarShowValue": true,
+                                    "useSparkline": false,
+                                    "sparklineDimension": "Date",
+                                    "sparklineTimeaware": false,
+                                    "sparklineTimestretch": false,
+                                    "sparklineType": "line",
+                                    "sparklineUseCustomStyling": false,
+                                    "sparklineColor": "#657dbb",
+                                    "sparklineFillAreaColor": "#657dbb",
+                                    "sparklineLineWidth": 1,
+                                    "sparklineUseHighlights": true,
+                                    "sparklineHighlightUseLast": false,
+                                    "sparklineHighglightLastColor": "#ff0000",
+                                    "sparklineHighlightUseMax": true,
+                                    "sparklineHighglightMaxColor": "#657dbb",
+                                    "sparklineHighlightUseMin": true,
+                                    "sparklineHighglightMinColor": "#657dbb",
+                                    "minichartBarColor": "#657dbb",
+                                    "minichartNegativeBarColor": "#FF0000",
+                                    "minichartMaxBars": "50",
+                                    "minichartFirstBars": true,
+                                    "minichartBarWidth": 4,
+                                    "minichartBarSpacing": 1,
+                                    "minichartZeroAxis": true,
+                                    "showBorder": true,
+                                    "Showtotal": "true",
+                                    "iconColorPicker": {
+                                        "color": "#000000",
+                                        "index": -1
+                                    },
+                                    "textColorPicker": {
+                                        "color": "#595959",
+                                        "index": -1
+                                    },
+                                    "backgroundColorPicker": {
+                                        "color": "#FFFFFF",
+                                        "index": -1
+                                    },
+                                    "useProgressbar": true,
+                                    "sparklineColorPicker": {
+                                        "color": "#657dbb",
+                                        "index": -1
+                                    },
+                                    "sparklineFillAreaColorPicker": {
+                                        "color": "#657dbb",
+                                        "index": -1
+                                    },
+                                    "progressBarColorPicker": {
+                                        "index": -1,
+                                        "color": "#657dbb"
+                                    },
+                                    "progressBarRemainingColorPicker": {
+                                        "color": "#000000",
+                                        "index": -1
+                                    },
+                                    "columnWidth": 200
+                                },
+                                "qSortBy": {
+                                    "qSortByNumeric": -1,
+                                    "qSortByLoadOrder": 1,
+                                    "qExpression": {}
+                                },
+                                "qAttributeExpressions": [],
+                                "qAttributeDimensions": [],
+                                "qCalcCond": {},
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "qTrendLines": [],
+                                "qMiniChartDef": {
+                                    "qSortBy": {
+                                        "qExpression": {}
+                                    },
+                                    "qOtherTotalSpec": {
+                                        "qOtherMode": "OTHER_OFF",
+                                        "qOtherCounted": {},
+                                        "qOtherLimit": {},
+                                        "qOtherLimitMode": "OTHER_GT_LIMIT",
+                                        "qForceBadValueKeeping": true,
+                                        "qApplyEvenWhenPossiblyWrongResult": true,
+                                        "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                        "qTotalMode": "TOTAL_OFF",
+                                        "qReferencedExpression": {}
+                                    },
+                                    "qMaxNumberPoints": -1,
+                                    "qAttributeExpressions": []
+                                }
+                            },
+                            {
+                                "qLibraryId": "keXJJ",
+                                "qDef": {
+                                    "qTags": [],
+                                    "qGrouping": "N",
+                                    "qNumFormat": {
+                                        "qType": "F",
+                                        "qnDec": 2,
+                                        "qUseThou": 0,
+                                        "qFmt": "0%",
+                                        "qDec": ".",
+                                        "qThou": ","
+                                    },
+                                    "qAggrFunc": "Expr",
+                                    "qAccumulate": 0,
+                                    "qActiveExpression": 0,
+                                    "qExpressions": [],
+                                    "autoSort": false,
+                                    "cId": "GCzRr",
+                                    "numFormatFromTemplate": true,
+                                    "textAlign": {
+                                        "auto": true,
+                                        "align": "left"
+                                    }
+                                },
+                                "qSortBy": {
+                                    "qSortByNumeric": 1,
+                                    "qSortByLoadOrder": 1,
+                                    "qExpression": {}
+                                },
+                                "qAttributeExpressions": [
+                                    {
+                                        "qExpression": "=if(((count({$< IC_Status= {'Processed','Received'}>} IC_Status))/\n(count({$< IC_Status= {'Processed','Received','Chased','Not Received','Escalated'}>} IC_Status)))>=.85,\nv_Color_SE_Life_Green,\n(if(((count({$< IC_Status= {'Processed','Received'}>} IC_Status))/\n(count({$< IC_Status= {'Processed','Received','Chased','Not Received','Escalated'}>} IC_Status)))<.85\nand \n((count({$< IC_Status= {'Processed','Received'}>} IC_Status))/\n(count({$< IC_Status= {'Processed','Received','Chased','Not Received','Escalated'}>} IC_Status))) >= .60,\nv_Color_SE_Honeysuckle_Orange,\nv_Color_SE_Fuchsia_Red)))\n\n",
+                                        "qNumFormat": {
+                                            "qType": "U",
+                                            "qnDec": 10,
+                                            "qUseThou": 0
+                                        },
+                                        "id": "cellForegroundColor"
+                                    }
+                                ],
+                                "qAttributeDimensions": [],
+                                "qCalcCond": {},
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "qTrendLines": [],
+                                "qMiniChartDef": {
+                                    "qSortBy": {
+                                        "qExpression": {}
+                                    },
+                                    "qOtherTotalSpec": {
+                                        "qOtherMode": "OTHER_OFF",
+                                        "qOtherCounted": {},
+                                        "qOtherLimit": {},
+                                        "qOtherLimitMode": "OTHER_GT_LIMIT",
+                                        "qForceBadValueKeeping": true,
+                                        "qApplyEvenWhenPossiblyWrongResult": true,
+                                        "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                        "qTotalMode": "TOTAL_OFF",
+                                        "qReferencedExpression": {}
+                                    },
+                                    "qMaxNumberPoints": -1,
+                                    "qAttributeExpressions": []
+                                }
+                            }
+                        ],
+                        "qInterColumnSortOrder": [
+                            12,
+                            11,
+                            5,
+                            1,
+                            2,
+                            3,
+                            4,
+                            6,
+                            7,
+                            8,
+                            10,
+                            9,
+                            0
+                        ],
+                        "qSuppressMissing": true,
+                        "qInitialDataFetch": [
+                            {
+                                "qLeft": 0,
+                                "qTop": 0,
+                                "qWidth": 0,
+                                "qHeight": 0
+                            }
+                        ],
+                        "qReductionMode": "N",
+                        "qMode": "S",
+                        "qPseudoDimPos": -1,
+                        "qNoOfLeftDims": -1,
+                        "qMaxStackedCells": 5000,
+                        "qCalcCond": {},
+                        "qTitle": {},
+                        "qCalcCondition": {
+                            "qCond": {},
+                            "qMsg": {}
+                        },
+                        "qColumnOrder": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            6,
+                            7,
+                            8,
+                            9,
+                            10,
+                            11,
+                            12
+                        ],
+                        "qExpansionState": [],
+                        "qDynamicScript": [],
+                        "customErrorMessage": {
+                            "calcCond": ""
+                        },
+                        "columnOrder": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            6,
+                            7,
+                            8,
+                            9,
+                            10,
+                            11,
+                            12
+                        ],
+                        "columnWidths": [
+                            -1,
+                            null,
+                            null,
+                            null,
+                            null,
+                            null,
+                            null,
+                            null,
+                            null,
+                            -1,
+                            -1,
+                            null,
+                            null
+                        ],
+                        "qLayoutExclude": {
+                            "qHyperCubeDef": {
+                                "qDimensions": [],
+                                "qMeasures": [],
+                                "qInterColumnSortOrder": [],
+                                "qInitialDataFetch": [],
+                                "qReductionMode": "N",
+                                "qMode": "S",
+                                "qPseudoDimPos": -1,
+                                "qNoOfLeftDims": -1,
+                                "qMaxStackedCells": 5000,
+                                "qCalcCond": {},
+                                "qTitle": {},
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "qColumnOrder": [],
+                                "qExpansionState": [],
+                                "qDynamicScript": []
+                            }
+                        }
+                    },
+                    "showTitles": true,
+                    "title": "",
+                    "subtitle": "",
+                    "footnote": "Right click on the table and select Export Data to export to Excel or CSV",
+                    "showDetails": false,
+                    "visualization": "table",
+                    "totals": {
+                        "show": false,
+                        "position": "noTotals",
+                        "label": "Totals"
+                    },
+                    "qLayoutExclude": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "f8f8a622-a431-4a3c-94f1-251a94161bc0",
+                        "qType": "filterpane"
+                    },
+                    "qMetaDef": {},
+                    "qChildListDef": {
+                        "qData": {
+                            "info": "/qInfo"
+                        }
+                    },
+                    "showTitles": false,
+                    "title": "",
+                    "subtitle": "",
+                    "footnote": "",
+                    "showDetails": false,
+                    "visualization": "filterpane"
+                },
+                "qChildren": [
+                    {
+                        "qProperty": {
+                            "qInfo": {
+                                "qId": "fd6ab8d9-dcaa-4544-bb87-ea735f734bc9",
+                                "qType": "listbox"
+                            },
+                            "qMetaDef": {},
+                            "qListObjectDef": {
+                                "qLibraryId": "JFzCHK",
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [],
+                                    "qFieldLabels": [],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByState": 1,
+                                            "qSortByNumeric": -1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        },
+                                        {
+                                            "qSortByState": 1,
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        },
+                                        {
+                                            "qSortByState": 1,
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": false,
+                                    "cId": "HUacvLP"
+                                },
+                                "qFrequencyMode": "N",
+                                "qShowAlternatives": true,
+                                "qInitialDataFetch": [],
+                                "qExpressions": [],
+                                "qOtherTotalSpec": {}
+                            },
+                            "showTitles": true,
+                            "title": "Time Period",
+                            "subtitle": "",
+                            "footnote": "",
+                            "showDetails": false,
+                            "visualization": "listbox"
+                        },
+                        "qChildren": []
+                    },
+                    {
+                        "qProperty": {
+                            "qInfo": {
+                                "qId": "6e2a615d-3b00-47d7-9123-8bb18a95d45b",
+                                "qType": "listbox"
+                            },
+                            "qMetaDef": {},
+                            "qListObjectDef": {
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [
+                                        "Division"
+                                    ],
+                                    "qFieldLabels": [
+                                        "Division"
+                                    ],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByState": 1,
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": true,
+                                    "cId": "yDANXb"
+                                },
+                                "qFrequencyMode": "N",
+                                "qShowAlternatives": true,
+                                "qInitialDataFetch": [],
+                                "qExpressions": [],
+                                "qOtherTotalSpec": {}
+                            },
+                            "showTitles": true,
+                            "title": "Division",
+                            "subtitle": "",
+                            "footnote": "",
+                            "showDetails": false,
+                            "visualization": "listbox"
+                        },
+                        "qChildren": []
+                    },
+                    {
+                        "qProperty": {
+                            "qInfo": {
+                                "qId": "d8f582bd-7552-4e6d-a0c3-cc3550b1f8d2",
+                                "qType": "listbox"
+                            },
+                            "qMetaDef": {},
+                            "qListObjectDef": {
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [
+                                        "Site"
+                                    ],
+                                    "qFieldLabels": [
+                                        "Site"
+                                    ],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByState": 1,
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": true,
+                                    "cId": "GkNgQ"
+                                },
+                                "qFrequencyMode": "N",
+                                "qShowAlternatives": true,
+                                "qInitialDataFetch": [],
+                                "qExpressions": [],
+                                "qOtherTotalSpec": {}
+                            },
+                            "showTitles": true,
+                            "title": "Site",
+                            "subtitle": "",
+                            "footnote": "",
+                            "showDetails": false,
+                            "visualization": "listbox"
+                        },
+                        "qChildren": []
+                    },
+                    {
+                        "qProperty": {
+                            "qInfo": {
+                                "qId": "97f58986-ed4e-4a7e-b058-5fe3c4d68585",
+                                "qType": "listbox"
+                            },
+                            "qMetaDef": {},
+                            "qListObjectDef": {
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [
+                                        "Country"
+                                    ],
+                                    "qFieldLabels": [
+                                        "Country"
+                                    ],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByState": 1,
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": true,
+                                    "cId": "rfLGj"
+                                },
+                                "qFrequencyMode": "N",
+                                "qShowAlternatives": true,
+                                "qInitialDataFetch": [],
+                                "qExpressions": [],
+                                "qOtherTotalSpec": {}
+                            },
+                            "showTitles": true,
+                            "title": "Country",
+                            "subtitle": "",
+                            "footnote": "",
+                            "showDetails": false,
+                            "visualization": "listbox"
+                        },
+                        "qChildren": []
+                    }
+                ]
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "c6991e1b-bb74-4175-af4c-56899bb9f771",
+                        "qType": "filterpane"
+                    },
+                    "qMetaDef": {},
+                    "qChildListDef": {
+                        "qData": {
+                            "info": "/qInfo"
+                        }
+                    },
+                    "showTitles": false,
+                    "title": "",
+                    "subtitle": "",
+                    "footnote": "",
+                    "showDetails": false,
+                    "visualization": "filterpane"
+                },
+                "qChildren": [
+                    {
+                        "qProperty": {
+                            "qInfo": {
+                                "qId": "6dcdf1a4-a2fc-4ad9-a800-d3f96301a7ed",
+                                "qType": "listbox"
+                            },
+                            "qMetaDef": {},
+                            "qListObjectDef": {
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [
+                                        "=Account_Service"
+                                    ],
+                                    "qFieldLabels": [
+                                        "=Account_Service"
+                                    ],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByState": 1,
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": true,
+                                    "cId": "LbrRXD"
+                                },
+                                "qFrequencyMode": "N",
+                                "qShowAlternatives": true,
+                                "qInitialDataFetch": [],
+                                "qExpressions": [],
+                                "qOtherTotalSpec": {}
+                            },
+                            "showTitles": true,
+                            "title": "Service",
+                            "subtitle": "",
+                            "footnote": "",
+                            "showDetails": false,
+                            "visualization": "listbox"
+                        },
+                        "qChildren": []
+                    },
+                    {
+                        "qProperty": {
+                            "qInfo": {
+                                "qId": "4cf5eea9-86a3-4f80-a357-3f53cc35d326",
+                                "qType": "listbox"
+                            },
+                            "qMetaDef": {},
+                            "qListObjectDef": {
+                                "qLibraryId": "RZjunj",
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [],
+                                    "qFieldLabels": [],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByState": 1,
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": true,
+                                    "cId": "rWBkJjE"
+                                },
+                                "qFrequencyMode": "N",
+                                "qShowAlternatives": true,
+                                "qInitialDataFetch": [],
+                                "qExpressions": [],
+                                "qOtherTotalSpec": {}
+                            },
+                            "showTitles": true,
+                            "title": "Vendor",
+                            "subtitle": "",
+                            "footnote": "",
+                            "showDetails": false,
+                            "visualization": "listbox"
+                        },
+                        "qChildren": []
+                    },
+                    {
+                        "qProperty": {
+                            "qInfo": {
+                                "qId": "4a0726db-a79a-4381-bba7-dd66aee7c231",
+                                "qType": "listbox"
+                            },
+                            "qMetaDef": {},
+                            "qListObjectDef": {
+                                "qLibraryId": "NpSmJu",
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [],
+                                    "qFieldLabels": [],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByState": 1,
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": true,
+                                    "cId": "sxkVGr"
+                                },
+                                "qFrequencyMode": "N",
+                                "qShowAlternatives": true,
+                                "qInitialDataFetch": [],
+                                "qExpressions": [],
+                                "qOtherTotalSpec": {}
+                            },
+                            "showTitles": true,
+                            "title": "Account Number",
+                            "subtitle": "",
+                            "footnote": "",
+                            "showDetails": false,
+                            "visualization": "listbox"
+                        },
+                        "qChildren": []
+                    },
+                    {
+                        "qProperty": {
+                            "qInfo": {
+                                "qId": "87bb7973-4a63-4924-a4fa-caf99cac5bb6",
+                                "qType": "listbox"
+                            },
+                            "qMetaDef": {},
+                            "qListObjectDef": {
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [
+                                        "=Billing_Cycle"
+                                    ],
+                                    "qFieldLabels": [
+                                        "=Billing_Cycle"
+                                    ],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByState": 1,
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": true,
+                                    "cId": "zjhjbmF"
+                                },
+                                "qFrequencyMode": "N",
+                                "qShowAlternatives": true,
+                                "qInitialDataFetch": [],
+                                "qExpressions": [],
+                                "qOtherTotalSpec": {}
+                            },
+                            "showTitles": true,
+                            "title": "Billing Cycle",
+                            "subtitle": "",
+                            "footnote": "",
+                            "showDetails": false,
+                            "visualization": "listbox"
+                        },
+                        "qChildren": []
+                    },
+                    {
+                        "qProperty": {
+                            "qInfo": {
+                                "qId": "617ee422-ad1f-43a4-be3b-d8c90c292fdf",
+                                "qType": "listbox"
+                            },
+                            "qMetaDef": {},
+                            "qListObjectDef": {
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [
+                                        "IC_Status"
+                                    ],
+                                    "qFieldLabels": [
+                                        "IC_Status"
+                                    ],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByState": 1,
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": true,
+                                    "cId": "PJWn"
+                                },
+                                "qFrequencyMode": "N",
+                                "qShowAlternatives": true,
+                                "qInitialDataFetch": [],
+                                "qExpressions": [],
+                                "qOtherTotalSpec": {}
+                            },
+                            "showTitles": true,
+                            "title": "Collection Status",
+                            "subtitle": "",
+                            "footnote": "",
+                            "showDetails": false,
+                            "visualization": "listbox"
+                        },
+                        "qChildren": []
+                    }
+                ]
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "481c505f-58a9-4149-8eef-b212f0fb29ea",
+                        "qType": "swr-sense-navigation"
+                    },
+                    "qMetaDef": {},
+                    "showTitles": false,
+                    "title": "",
+                    "subtitle": "",
+                    "footnote": "",
+                    "showDetails": false,
+                    "props": {
+                        "buttonLabel": "Home",
+                        "buttonStyle": "info",
+                        "fullWidth": false,
+                        "buttonAlign": "left",
+                        "isButtonMultiLine": false,
+                        "buttonIcon": "",
+                        "action": "gotoSheet",
+                        "sheetId": "",
+                        "selectedSheet": "TtvyYzz",
+                        "selectedStory": "",
+                        "websiteUrl": "",
+                        "isActionsBefore": false,
+                        "actionBefore1": "none",
+                        "field1": "",
+                        "variable1": "",
+                        "value1": "",
+                        "value1Desc": null,
+                        "bookmark1": "",
+                        "softlock1": false,
+                        "actionBefore2": "none",
+                        "field2": "",
+                        "variable2": "",
+                        "value2": "",
+                        "value2Desc": "",
+                        "bookmark2": "",
+                        "softlock2": false
+                    },
+                    "visualization": "swr-sense-navigation",
+                    "version": "0.8.1",
+                    "extensionMeta": {
+                        "name": "Sheet Navigation & Actions",
+                        "description": "Sense Sheet Navigation + Actions visualization extension for Qlik Sense.",
+                        "icon": "extension",
+                        "type": "visualization",
+                        "version": "0.8.1",
+                        "preview": "swr-sense-navigation.png",
+                        "author": "Stefan Walther",
+                        "license": "MIT",
+                        "homepage": "http://github.com/stefanwalther/sense-navigation",
+                        "keywords": "qlik-sense, visualization",
+                        "repository": "https://github.com/stefanwalther/sense-navigation",
+                        "dependencies": {
+                            "qlik-sense": ">=2.1.1"
+                        },
+                        "previewIconURL": "../extensions/swr-sense-navigation/swr-sense-navigation.png",
+                        "template": "swr-sense-navigation",
+                        "isLibraryItem": true,
+                        "isThirdParty": true,
+                        "templateIconClassName": "icon-extension"
+                    }
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "76cf1244-68c6-4f7b-959d-af43f0bba2d0",
+                        "qType": "table"
+                    },
+                    "qMetaDef": {},
+                    "qHyperCubeDef": {
+                        "qDimensions": [
+                            {
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [
+                                        "=if(IC_Status= 'Processed' OR IC_Status='Received' OR IC_Status='Chased' OR IC_Status='Not Received' \r\nOR IC_Status='Escalated' OR IC_Status='Under Review', IC_Status)"
+                                    ],
+                                    "qFieldLabels": [
+                                        "Legend"
+                                    ],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": false,
+                                    "cId": "gRsjSsJ",
+                                    "othersLabel": "Others",
+                                    "representation": {
+                                        "type": "text"
+                                    }
+                                },
+                                "qNullSuppression": true,
+                                "qOtherTotalSpec": {
+                                    "qOtherMode": "OTHER_OFF",
+                                    "qOtherCounted": {
+                                        "qv": "10"
+                                    },
+                                    "qOtherLimit": {
+                                        "qv": "0"
+                                    },
+                                    "qOtherLimitMode": "OTHER_GE_LIMIT",
+                                    "qForceBadValueKeeping": true,
+                                    "qApplyEvenWhenPossiblyWrongResult": true,
+                                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                    "qTotalMode": "TOTAL_OFF",
+                                    "qReferencedExpression": {}
+                                },
+                                "qOtherLabel": {
+                                    "qv": "Others"
+                                },
+                                "qTotalLabel": {},
+                                "qCalcCond": {},
+                                "qAttributeExpressions": [
+                                    {
+                                        "qExpression": "$(v_CP_Status_Colors)",
+                                        "qAttribute": true,
+                                        "qNumFormat": {
+                                            "qType": "U",
+                                            "qnDec": 10,
+                                            "qUseThou": 0
+                                        },
+                                        "id": "cellBackgroundColor"
+                                    },
+                                    {
+                                        "qExpression": "='white'",
+                                        "qAttribute": true,
+                                        "qNumFormat": {
+                                            "qType": "U",
+                                            "qnDec": 10,
+                                            "qUseThou": 0
+                                        },
+                                        "id": "cellForegroundColor"
+                                    }
+                                ],
+                                "qAttributeDimensions": [],
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "othersLabel": "Others"
+                            }
+                        ],
+                        "qMeasures": [
+                            {
+                                "qLibraryId": "gRSAQG",
+                                "qDef": {
+                                    "qTags": [],
+                                    "qGrouping": "N",
+                                    "qNumFormat": {
+                                        "qType": "F",
+                                        "qnDec": 2,
+                                        "qUseThou": 0,
+                                        "qFmt": "0%",
+                                        "qDec": ".",
+                                        "qThou": ","
+                                    },
+                                    "qAggrFunc": "Expr",
+                                    "qAccumulate": 0,
+                                    "qActiveExpression": 0,
+                                    "qExpressions": [],
+                                    "autoSort": true,
+                                    "cId": "LDwmsj",
+                                    "numFormatFromTemplate": true,
+                                    "textAlign": {
+                                        "auto": true,
+                                        "align": "left"
+                                    }
+                                },
+                                "qSortBy": {
+                                    "qSortByNumeric": -1,
+                                    "qSortByLoadOrder": 1,
+                                    "qExpression": {}
+                                },
+                                "qAttributeExpressions": [
+                                    {
+                                        "qExpression": "$(v_CP_Status_Colors)",
+                                        "qAttribute": true,
+                                        "qNumFormat": {
+                                            "qType": "U",
+                                            "qnDec": 10,
+                                            "qUseThou": 0
+                                        },
+                                        "id": "cellForegroundColor"
+                                    }
+                                ],
+                                "qAttributeDimensions": [],
+                                "qCalcCond": {},
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "qTrendLines": [],
+                                "qMiniChartDef": {
+                                    "qSortBy": {
+                                        "qExpression": {}
+                                    },
+                                    "qOtherTotalSpec": {
+                                        "qOtherMode": "OTHER_OFF",
+                                        "qOtherCounted": {},
+                                        "qOtherLimit": {},
+                                        "qOtherLimitMode": "OTHER_GT_LIMIT",
+                                        "qForceBadValueKeeping": true,
+                                        "qApplyEvenWhenPossiblyWrongResult": true,
+                                        "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                        "qTotalMode": "TOTAL_OFF",
+                                        "qReferencedExpression": {}
+                                    },
+                                    "qMaxNumberPoints": -1,
+                                    "qAttributeExpressions": []
+                                }
+                            }
+                        ],
+                        "qInterColumnSortOrder": [
+                            1,
+                            0
+                        ],
+                        "qSuppressMissing": true,
+                        "qInitialDataFetch": [
+                            {
+                                "qLeft": 0,
+                                "qTop": 0,
+                                "qWidth": 0,
+                                "qHeight": 0
+                            }
+                        ],
+                        "qReductionMode": "N",
+                        "qMode": "S",
+                        "qPseudoDimPos": -1,
+                        "qNoOfLeftDims": -1,
+                        "qMaxStackedCells": 5000,
+                        "qCalcCond": {},
+                        "qTitle": {},
+                        "qCalcCondition": {
+                            "qCond": {},
+                            "qMsg": {}
+                        },
+                        "qColumnOrder": [
+                            0,
+                            1
+                        ],
+                        "qExpansionState": [],
+                        "qDynamicScript": [],
+                        "customErrorMessage": {
+                            "calcCond": ""
+                        },
+                        "columnOrder": [
+                            0,
+                            1
+                        ],
+                        "columnWidths": [
+                            73,
+                            -1
+                        ],
+                        "qLayoutExclude": {
+                            "qHyperCubeDef": {
+                                "qDimensions": [],
+                                "qMeasures": [],
+                                "qInterColumnSortOrder": [],
+                                "qInitialDataFetch": [],
+                                "qReductionMode": "N",
+                                "qMode": "S",
+                                "qPseudoDimPos": -1,
+                                "qNoOfLeftDims": -1,
+                                "qMaxStackedCells": 5000,
+                                "qCalcCond": {},
+                                "qTitle": {},
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "qColumnOrder": [],
+                                "qExpansionState": [],
+                                "qDynamicScript": []
+                            }
+                        }
+                    },
+                    "showTitles": false,
+                    "title": "",
+                    "subtitle": "",
+                    "footnote": "",
+                    "showDetails": false,
+                    "visualization": "table",
+                    "qLayoutExclude": {},
+                    "totals": {
+                        "show": false,
+                        "position": "noTotals",
+                        "label": "Totals"
+                    }
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "e0108f1d-0730-4af0-9559-e9af5b0ace33",
+                        "qType": "barchart"
+                    },
+                    "qMetaDef": {},
+                    "qHyperCubeDef": {
+                        "qDimensions": [
+                            {
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [
+                                        "=Date([Service Month],'MMM YYYY')\n\n"
+                                    ],
+                                    "qFieldLabels": [
+                                        "Service Month"
+                                    ],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": true,
+                                    "cId": "mESgYy",
+                                    "othersLabel": "Others"
+                                },
+                                "qOtherTotalSpec": {
+                                    "qOtherMode": "OTHER_OFF",
+                                    "qOtherCounted": {
+                                        "qv": "10"
+                                    },
+                                    "qOtherLimit": {
+                                        "qv": "0"
+                                    },
+                                    "qOtherLimitMode": "OTHER_GE_LIMIT",
+                                    "qForceBadValueKeeping": true,
+                                    "qApplyEvenWhenPossiblyWrongResult": true,
+                                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                    "qTotalMode": "TOTAL_OFF",
+                                    "qReferencedExpression": {}
+                                },
+                                "qOtherLabel": {
+                                    "qv": "Others"
+                                },
+                                "qTotalLabel": {},
+                                "qCalcCond": {},
+                                "qAttributeExpressions": [],
+                                "qAttributeDimensions": [],
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                }
+                            },
+                            {
+                                "qDef": {
+                                    "qGrouping": "N",
+                                    "qFieldDefs": [
+                                        "=if(IC_Status= 'Processed' OR IC_Status='Received' OR IC_Status='Chased' OR IC_Status='Not Received' \r\nOR IC_Status='Escalated' OR IC_Status='Under Review', IC_Status)"
+                                    ],
+                                    "qFieldLabels": [
+                                        "%"
+                                    ],
+                                    "qSortCriterias": [
+                                        {
+                                            "qSortByNumeric": 1,
+                                            "qSortByAscii": 1,
+                                            "qSortByLoadOrder": 1,
+                                            "qExpression": {}
+                                        }
+                                    ],
+                                    "qNumberPresentations": [],
+                                    "qActiveField": 0,
+                                    "autoSort": true,
+                                    "cId": "srftGw",
+                                    "othersLabel": "Others"
+                                },
+                                "qNullSuppression": true,
+                                "qOtherTotalSpec": {
+                                    "qOtherMode": "OTHER_OFF",
+                                    "qOtherCounted": {
+                                        "qv": "10"
+                                    },
+                                    "qOtherLimit": {
+                                        "qv": "0"
+                                    },
+                                    "qOtherLimitMode": "OTHER_GE_LIMIT",
+                                    "qForceBadValueKeeping": true,
+                                    "qApplyEvenWhenPossiblyWrongResult": true,
+                                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                    "qTotalMode": "TOTAL_OFF",
+                                    "qReferencedExpression": {}
+                                },
+                                "qOtherLabel": {
+                                    "qv": "Others"
+                                },
+                                "qTotalLabel": {},
+                                "qCalcCond": {},
+                                "qAttributeExpressions": [],
+                                "qAttributeDimensions": [],
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                }
+                            }
+                        ],
+                        "qMeasures": [
+                            {
+                                "qLibraryId": "frjfMt",
+                                "qDef": {
+                                    "qTags": [],
+                                    "qGrouping": "N",
+                                    "qNumFormat": {
+                                        "qType": "F",
+                                        "qnDec": 2,
+                                        "qUseThou": 0,
+                                        "qFmt": "0.00%",
+                                        "qDec": ".",
+                                        "qThou": ","
+                                    },
+                                    "qAccumulate": 0,
+                                    "qActiveExpression": 0,
+                                    "qExpressions": [],
+                                    "autoSort": true,
+                                    "cId": "ZgPWRj",
+                                    "numFormatFromTemplate": true
+                                },
+                                "qSortBy": {
+                                    "qSortByNumeric": -1,
+                                    "qSortByLoadOrder": 1,
+                                    "qExpression": {}
+                                },
+                                "qAttributeExpressions": [
+                                    {
+                                        "qExpression": "$(v_CP_Status_Colors)",
+                                        "qAttribute": true,
+                                        "qNumFormat": {
+                                            "qType": "U",
+                                            "qnDec": 10,
+                                            "qUseThou": 0
+                                        },
+                                        "id": "colorByExpression"
+                                    }
+                                ],
+                                "qAttributeDimensions": [],
+                                "qCalcCond": {},
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "qTrendLines": [],
+                                "qMiniChartDef": {
+                                    "qSortBy": {
+                                        "qExpression": {}
+                                    },
+                                    "qOtherTotalSpec": {
+                                        "qOtherMode": "OTHER_OFF",
+                                        "qOtherCounted": {},
+                                        "qOtherLimit": {},
+                                        "qOtherLimitMode": "OTHER_GT_LIMIT",
+                                        "qForceBadValueKeeping": true,
+                                        "qApplyEvenWhenPossiblyWrongResult": true,
+                                        "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                                        "qTotalMode": "TOTAL_OFF",
+                                        "qReferencedExpression": {}
+                                    },
+                                    "qMaxNumberPoints": -1,
+                                    "qAttributeExpressions": []
+                                }
+                            }
+                        ],
+                        "qInterColumnSortOrder": [
+                            0,
+                            1,
+                            2
+                        ],
+                        "qSuppressMissing": true,
+                        "qInitialDataFetch": [
+                            {
+                                "qLeft": 0,
+                                "qTop": 0,
+                                "qWidth": 17,
+                                "qHeight": 500
+                            }
+                        ],
+                        "qReductionMode": "N",
+                        "qMode": "K",
+                        "qPseudoDimPos": -1,
+                        "qNoOfLeftDims": -1,
+                        "qAlwaysFullyExpanded": true,
+                        "qMaxStackedCells": 5000,
+                        "qCalcCond": {},
+                        "qTitle": {},
+                        "qCalcCondition": {
+                            "qCond": {},
+                            "qMsg": {}
+                        },
+                        "qColumnOrder": [],
+                        "qExpansionState": [],
+                        "qDynamicScript": [],
+                        "customErrorMessage": {
+                            "calcCond": ""
+                        },
+                        "qLayoutExclude": {
+                            "qHyperCubeDef": {
+                                "qDimensions": [],
+                                "qMeasures": [],
+                                "qInterColumnSortOrder": [],
+                                "qInitialDataFetch": [],
+                                "qReductionMode": "N",
+                                "qMode": "S",
+                                "qPseudoDimPos": -1,
+                                "qNoOfLeftDims": -1,
+                                "qMaxStackedCells": 5000,
+                                "qCalcCond": {},
+                                "qTitle": {},
+                                "qCalcCondition": {
+                                    "qCond": {},
+                                    "qMsg": {}
+                                },
+                                "qColumnOrder": [],
+                                "qExpansionState": [],
+                                "qDynamicScript": []
+                            }
+                        }
+                    },
+                    "refLine": {
+                        "refLines": []
+                    },
+                    "showTitles": false,
+                    "title": "",
+                    "subtitle": "",
+                    "footnote": "",
+                    "showDetails": false,
+                    "barGrouping": {
+                        "grouping": "stacked"
+                    },
+                    "orientation": "vertical",
+                    "scrollStartPos": 1,
+                    "gridLine": {
+                        "auto": false,
+                        "spacing": 3
+                    },
+                    "dataPoint": {
+                        "showLabels": false
+                    },
+                    "color": {
+                        "auto": false,
+                        "mode": "byExpression",
+                        "useBaseColors": "off",
+                        "singleColor": 3,
+                        "paletteColor": {
+                            "index": 6
+                        },
+                        "persistent": true,
+                        "expressionIsColor": true,
+                        "expressionLabel": "",
+                        "measureScheme": "sg",
+                        "reverseScheme": false,
+                        "dimensionScheme": "12",
+                        "autoMinMax": true,
+                        "measureMin": 0,
+                        "measureMax": 10,
+                        "byDimDef": {
+                            "label": "IC_Status",
+                            "key": "IC_Status",
+                            "type": "expression"
+                        },
+                        "altLabel": "IC_Status",
+                        "colorExpression": "$(v_CP_Status_Colors)",
+                        "useDimColVal": false
+                    },
+                    "legend": {
+                        "show": true,
+                        "dock": "right",
+                        "showTitle": true
+                    },
+                    "dimensionAxis": {
+                        "continuousAuto": true,
+                        "show": "all",
+                        "label": "tilted",
+                        "dock": "near"
+                    },
+                    "preferContinuousAxis": true,
+                    "measureAxis": {
+                        "show": "all",
+                        "dock": "near",
+                        "spacing": 1,
+                        "autoMinMax": false,
+                        "minMax": "minMax",
+                        "min": 0,
+                        "max": 1
+                    },
+                    "visualization": "barchart",
+                    "masterVersion": 0.96,
+                    "components": []
+                },
+                "qChildren": []
+            }
+        ]
+    }
+]

@@ -1,0 +1,211 @@
+[
+    {
+        "qProperty": {
+            "qInfo": {
+                "qId": "2ba99a98-7216-4f00-8fdb-c30c29c0b907",
+                "qType": "sheet"
+            },
+            "qMetaDef": {
+                "title": "Received",
+                "description": ""
+            },
+            "rank": 1.8125,
+            "thumbnail": {
+                "qStaticContentUrlDef": {
+                    "qUrl": "/appcontent/12a37d50-ec71-4a8c-b7b7-1ba8375d7154/01_Rec.jpg"
+                }
+            },
+            "columns": 36,
+            "rows": 18,
+            "cells": [
+                {
+                    "name": "07d76139-7851-4707-8f9a-e3b701241ab5",
+                    "type": "VizlibTable",
+                    "col": 0,
+                    "row": 8,
+                    "colspan": 36,
+                    "rowspan": 10,
+                    "bounds": {
+                        "y": 44.44444444444444,
+                        "x": 0,
+                        "width": 100,
+                        "height": 55.55555555555556
+                    }
+                },
+                {
+                    "name": "edd39567-d979-47c9-b81a-09f5ae4aed52",
+                    "type": "barchart",
+                    "col": 16,
+                    "row": 3,
+                    "colspan": 20,
+                    "rowspan": 5,
+                    "bounds": {
+                        "y": 16.666666666666664,
+                        "x": 44.44444444444444,
+                        "width": 55.55555555555556,
+                        "height": 27.77777777777778
+                    }
+                },
+                {
+                    "name": "MnBdmj",
+                    "type": "kpi",
+                    "col": 0,
+                    "row": 3,
+                    "colspan": 8,
+                    "rowspan": 4,
+                    "bounds": {
+                        "y": 16.666666666666664,
+                        "x": 0,
+                        "width": 22.22222222222222,
+                        "height": 22.22222222222222
+                    }
+                },
+                {
+                    "name": "WCLWpjg",
+                    "type": "kpi",
+                    "col": 8,
+                    "row": 3,
+                    "colspan": 8,
+                    "rowspan": 5,
+                    "bounds": {
+                        "y": 16.666666666666664,
+                        "x": 22.22222222222222,
+                        "width": 22.22222222222222,
+                        "height": 27.77777777777778
+                    }
+                },
+                {
+                    "name": "MMjjY",
+                    "type": "CustomExcelExport",
+                    "col": 0,
+                    "row": 7,
+                    "colspan": 8,
+                    "rowspan": 1,
+                    "bounds": {
+                        "y": 38.88888888888889,
+                        "x": 0,
+                        "width": 22.22222222222222,
+                        "height": 5.555555555555555
+                    }
+                }
+            ],
+            "gridResolution": "large",
+            "gridMode": "edit"
+        },
+        "qChildren": [
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "MnBdmj",
+                        "qType": "kpi"
+                    },
+                    "qExtendsId": "eeb0db87-a8ed-4cb5-b68b-18bd9ca23f49",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "07d76139-7851-4707-8f9a-e3b701241ab5",
+                        "qType": "table"
+                    },
+                    "qExtendsId": "b5cca9e2-b9dc-4603-8e47-98e07248b4a7",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "MMjjY",
+                        "qType": "CustomExcelExport"
+                    },
+                    "qMetaDef": {},
+                    "buttonName": "Export To Excel",
+                    "ButtonBackground": {
+                        "color": "#ffffff",
+                        "index": "-1"
+                    },
+                    "ButtonTextColor": {
+                        "color": "#595959",
+                        "index": "-1"
+                    },
+                    "useMasterItem": false,
+                    "objectId": "07d76139-7851-4707-8f9a-e3b701241ab5",
+                    "excelName": "test",
+                    "labelCurrentSelections": "Selections:",
+                    "SheetTitle": "test",
+                    "TitleBackground": {
+                        "color": "#ffffff",
+                        "index": "-1"
+                    },
+                    "TitleTextColor": {
+                        "color": "#595959",
+                        "index": "-1"
+                    },
+                    "includeLogo": true,
+                    "logoUrl": "",
+                    "visualization": "CustomExcelExport",
+                    "masterObjects": {
+                        "qAppObjectListDef": {
+                            "qType": "masterobject",
+                            "qData": {}
+                        }
+                    },
+                    "version": "1.0.0",
+                    "extensionMeta": {
+                        "translationKey": "",
+                        "icon": "table",
+                        "iconChar": "puzzle",
+                        "isLibraryItem": true,
+                        "visible": true,
+                        "name": "Custom Excel Export",
+                        "description": "Custom Excel Export",
+                        "template": "CustomExcelExport",
+                        "iconPath": "M14.5,9 L13,9 L13,3.3 C13,3.1 12.9,3 12.7,3 L8,3 L8,1.5 C8,0.7 7.3,0 6.5,0 C5.7,0 5,0.7 5,1.5 L5,3 L0.3,3 C0.1,3 0,3.1 0,3.3 L0,9 L1.5,9 C2.3,9 3,9.7 3,10.5 C3,11.3 2.3,12 1.5,12 L0,12 L0,15.7 C0,15.9 0.1,16 0.3,16 L5,16 L5,14.5 C5,13.7 5.7,13 6.5,13 C7.3,13 8,13.7 8,14.5 L8,16 L12.7,16 C12.9,16 13,15.9 13,15.7 L13,12 L14.5,12 C15.3,12 16,11.3 16,10.5 C16,9.7 15.3,9 14.5,9 Z",
+                        "isThirdParty": true,
+                        "type": "visualization",
+                        "version": "1.0.0",
+                        "author": "",
+                        "homepage": "",
+                        "keywords": "qlik-sense, visualization",
+                        "license": "",
+                        "repository": "",
+                        "dependencies": {
+                            "qlik-sense": ">=3.0.x"
+                        },
+                        "bundle": {
+                            "id": "Schneider",
+                            "name": "SE Extensions",
+                            "description": "Schneider Certified Extensions"
+                        }
+                    }
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "edd39567-d979-47c9-b81a-09f5ae4aed52",
+                        "qType": "barchart"
+                    },
+                    "qExtendsId": "a48ade9e-6b96-4c59-ac1a-4981dc9340ee",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            },
+            {
+                "qProperty": {
+                    "qInfo": {
+                        "qId": "WCLWpjg",
+                        "qType": "kpi"
+                    },
+                    "qExtendsId": "59bf9932-30cb-469f-9368-f42eb939353a",
+                    "qMetaDef": {}
+                },
+                "qChildren": []
+            }
+        ]
+    }
+]
